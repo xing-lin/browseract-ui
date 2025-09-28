@@ -1,6 +1,6 @@
 {
   "name": "browseract-ui",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -8,10 +8,6 @@
     "build": "rm -rf dist/ && prettier --write src/ && npm run rollup",
     "rollup": "rollup -c --bundleConfigAsCjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "description": "",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
@@ -31,5 +27,20 @@
   "peerDependencies": {
     "react": ">=19",
     "react-dom": ">=19"
-  }
+  },
+  "keywords": [
+    "browseract-ui",
+    "browseract",
+    "react",
+    "react-ui",
+    "react-components",
+    "ui-components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xing-lin/browseract-ui"
+  },
+  "author": "Xing Lin <linxing0427@163.com>",
+  "license": "MIT",
+  "description": "BrowserAct React Component Library"
 }
