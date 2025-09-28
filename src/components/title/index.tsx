@@ -3,5 +3,5 @@ interface Props {
 }
 
 export function Title({ className }: Props) {
-  return <h2 className={className}>title</h2>;
+  return <h2 className={className}>1111title1111</h2>;
 }
