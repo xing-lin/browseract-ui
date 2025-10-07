@@ -1,1 +1,1 @@
-export * from './IconDislike';
+export { default as IconDislike } from './dislike/IconDislike';
