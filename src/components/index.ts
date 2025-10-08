@@ -1,1 +1,1 @@
-export * from './icons';
+export { IconDislike } from './icons/dislike/IconDislike';

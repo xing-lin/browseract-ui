@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import IconDislike from './IconDislike';
+import { IconDislike } from './IconDislike';
 
 const meta: Meta<typeof IconDislike> = {
   title: 'Icons/IconDislike',
   component: IconDislike,
-  args: {
-    'aria-label': 'Dislike Icon',
-    width: 16,
-    height: 16,
+  argTypes: {
+    color: { control: 'color' },
   },
 };
 export default meta;

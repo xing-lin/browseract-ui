@@ -1,11 +1,13 @@
-export default function IconDislike(props: React.SVGProps<SVGSVGElement>) {
+import { baseIconConfigs } from '../constants';
+
+export function IconDislike(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      {...baseIconConfigs}
       viewBox="0 0 16 16"
       {...props}
     >
+      <title>Dislike</title>
       <path
         fill="currentColor"
         transform="rotate(180 16 16)"
