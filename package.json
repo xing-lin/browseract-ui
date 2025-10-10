@@ -12,7 +12,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "release": "semantic-release"
   },
   "peerDependencies": {
     "react": ">=19",
@@ -80,5 +81,8 @@
   },
   "author": "Xing Lin <linxing0427@163.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "BrowserAct React Component Library"
 }
