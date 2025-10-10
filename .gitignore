@@ -56,10 +56,5 @@ vitest.config.*.timestamp*
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 
-
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 *storybook.log
 storybook-static
