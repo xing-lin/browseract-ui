@@ -66,13 +66,12 @@ jobs:
         run: |
           set -euo pipefail
 
-          # 校验必要变量
           if [ -z "${TARGET_REPO}" ]; then
-            echo "ERROR: TARGET_REPO env is empty. Set env TARGET_REPO='owner/repo' at top of workflow."
+            echo "ERROR: TARGET_REPO env is empty."
             exit 1
           fi
           if [ -z "${TARGET_REPO_TOKEN:-}" ]; then
-            echo "ERROR: TARGET_REPO_TOKEN secret is empty. Add it to repository secrets."
+            echo "ERROR: TARGET_REPO_TOKEN secret is empty."
             exit 2
           fi
 
@@ -86,46 +85,35 @@ jobs:
           echo "Deploying storybook v${PACKAGE_VERSION} to ${TARGET_REPO}:main (path: static/storybook-static)"
 
           TMP_DIR=$(mktemp -d)
-          echo "Cloning target repo into ${TMP_DIR} (no token printed)"
-          git -c http.extraHeader="AUTH: bearer ${TARGET_REPO_TOKEN}" clone --depth 1 "https://github.com/${TARGET_REPO}.git" "${TMP_DIR}"
+          echo "Cloning target repo into ${TMP_DIR}"
+          git -c http.extraHeader="Authorization: Bearer ${TARGET_REPO_TOKEN}" clone --depth 1 "https://github.com/${TARGET_REPO}.git" "${TMP_DIR}"
 
           cd "${TMP_DIR}"
 
-          # 确保在 main 分支（若不存在则创建）
           if git rev-parse --verify origin/main >/dev/null 2>&1; then
             git checkout main
             git reset --hard origin/main
           else
-            # 如果目标仓库没有 main 分支，创建之
             git checkout --orphan main
             git rm -rf .
             git commit --allow-empty -m "chore: initialize main branch"
-            git push origin main || true
+            git -c http.extraHeader="Authorization: Bearer ${TARGET_REPO_TOKEN}" push origin main || true
           fi
 
-          # 目标路径（在 B 仓库 main 分支下的 static/storybook-static）
           TARGET_PATH="static/storybook-static"
-
-          echo "Removing old ${TARGET_PATH} (if exists)"
           rm -rf "${TARGET_PATH}" || true
           mkdir -p "$(dirname "${TARGET_PATH}")"
-
-          echo "Copying new storybook static files..."
           cp -R "${SRC_DIR}/." "${TARGET_PATH}/"
 
-          # 设置 git user 信息
           git config user.name "github-actions[bot]" || true
           git config user.email "github-actions[bot]@users.noreply.github.com" || true
 
-          # 提交更改（若无改动则跳过）
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to deploy (storybook content identical)."
           else
             git commit -m "chore(storybook): deploy storybook v${PACKAGE_VERSION} from $GITHUB_REPOSITORY@${GITHUB_SHA}"
-            # 推送到 target repo main 分支
-            # 使用 HTTP 带 token 的方式（extraHeader 已注入），不显示 token
-            git push origin main
+            git -c http.extraHeader="Authorization: Bearer ${TARGET_REPO_TOKEN}" push origin main
             echo "Pushed storybook to ${TARGET_REPO}:main"
           fi
 
