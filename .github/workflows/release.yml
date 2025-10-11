@@ -1,4 +1,4 @@
-name: Release on main
+name: Release on main (publish + deploy storybook to other repo)
 
 on:
   push:
@@ -11,6 +11,9 @@ permissions:
   packages: write
   id-token: write
   pull-requests: write
+
+env:
+  TARGET_REPO: 'xing-lin/xing-lin.github.io'
 
 jobs:
   release:
@@ -31,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (rollup)
+      - name: Build package (rollup)
         run: npm run build
 
       - name: Run semantic-release (determine version, tag, update package.json, publish to npm)
@@ -39,3 +42,92 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
+
+      - name: Fetch latest main (get semantic-release's commits / updated package.json & tags)
+        run: |
+          git fetch origin main --tags
+          git checkout main
+          git reset --hard origin/main
+          git --no-pager log -n 5 --pretty=oneline
+
+      - name: Show package version (debug)
+        run: |
+          echo "package.json version:"
+          node -p "require('./package.json').version"
+
+      - name: Build Storybook static
+        run: npm run build-storybook
+
+      - name: Deploy storybook-static to target repo (replace static/storybook-static)
+        env:
+          TARGET_REPO: ${{ env.TARGET_REPO }}
+          TARGET_REPO_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_ACTOR: github-actions
+        run: |
+          set -euo pipefail
+
+          # 校验必要变量
+          if [ -z "${TARGET_REPO}" ]; then
+            echo "ERROR: TARGET_REPO env is empty. Set env TARGET_REPO='owner/repo' at top of workflow."
+            exit 1
+          fi
+          if [ -z "${TARGET_REPO_TOKEN:-}" ]; then
+            echo "ERROR: TARGET_REPO_TOKEN secret is empty. Add it to repository secrets."
+            exit 2
+          fi
+
+          SRC_DIR="${GITHUB_WORKSPACE}/storybook-static"
+          if [ ! -d "$SRC_DIR" ]; then
+            echo "ERROR: storybook build output not found at ${SRC_DIR}"
+            exit 3
+          fi
+
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "Deploying storybook v${PACKAGE_VERSION} to ${TARGET_REPO}:main (path: static/storybook-static)"
+
+          TMP_DIR=$(mktemp -d)
+          echo "Cloning target repo into ${TMP_DIR} (no token printed)"
+          git -c http.extraHeader="AUTH: bearer ${TARGET_REPO_TOKEN}" clone --depth 1 "https://github.com/${TARGET_REPO}.git" "${TMP_DIR}"
+
+          cd "${TMP_DIR}"
+
+          # 确保在 main 分支（若不存在则创建）
+          if git rev-parse --verify origin/main >/dev/null 2>&1; then
+            git checkout main
+            git reset --hard origin/main
+          else
+            # 如果目标仓库没有 main 分支，创建之
+            git checkout --orphan main
+            git rm -rf .
+            git commit --allow-empty -m "chore: initialize main branch"
+            git push origin main || true
+          fi
+
+          # 目标路径（在 B 仓库 main 分支下的 static/storybook-static）
+          TARGET_PATH="static/storybook-static"
+
+          echo "Removing old ${TARGET_PATH} (if exists)"
+          rm -rf "${TARGET_PATH}" || true
+          mkdir -p "$(dirname "${TARGET_PATH}")"
+
+          echo "Copying new storybook static files..."
+          cp -R "${SRC_DIR}/." "${TARGET_PATH}/"
+
+          # 设置 git user 信息
+          git config user.name "github-actions[bot]" || true
+          git config user.email "github-actions[bot]@users.noreply.github.com" || true
+
+          # 提交更改（若无改动则跳过）
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy (storybook content identical)."
+          else
+            git commit -m "chore(storybook): deploy storybook v${PACKAGE_VERSION} from $GITHUB_REPOSITORY@${GITHUB_SHA}"
+            # 推送到 target repo main 分支
+            # 使用 HTTP 带 token 的方式（extraHeader 已注入），不显示 token
+            git push origin main
+            echo "Pushed storybook to ${TARGET_REPO}:main"
+          fi
+
+      - name: Done
+        run: echo "Release + Storybook deploy finished."
