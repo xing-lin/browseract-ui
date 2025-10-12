@@ -60,10 +60,8 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          # 如果你的 lcov 不在 coverage/lcov.info，请修改下面 path
           file: coverage/lcov.info
 
-      # ---------- 2. 构建并发布（semantic-release） ----------
       - name: Build package (rollup)
         run: npm run build
 
