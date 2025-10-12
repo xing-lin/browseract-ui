@@ -1,6 +1,6 @@
 # BrowserAct UI Components
 
-[BrowserAct UI](https://xing-lin.github.io/components)
+[![NPM version](https://img.shields.io/npm/v/browseract-ui.svg?style=flat)](https://www.npmjs.com/package/browseract-ui)
 
 ## Installation
 

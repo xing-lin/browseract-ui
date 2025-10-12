@@ -1,4 +1,4 @@
-name: Release on main (publish + deploy storybook to other repo)
+name: Release on main (test -> publish -> deploy storybook)
 
 on:
   push:
@@ -34,6 +34,33 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run tests with coverage
+        run: |
+          npm run test:coverage
+
+      - name: Show coverage files (debug)
+        run: |
+          echo "Coverage folder listing (for debug):"
+          ls -la coverage || true
+          find coverage -maxdepth 4 -type f -print || true
+          if [ -f coverage/lcov.info ]; then
+            echo "lcov found: coverage/lcov.info"
+            echo "---- head of lcov.info ----"
+            head -n 20 coverage/lcov.info || true
+            echo "---- end head ----"
+          else
+            echo "WARNING: coverage/lcov.info not found. Ensure vitest is configured with reporters including 'lcov'."
+            exit 1
+          fi
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # 如果你的 lcov 不在 coverage/lcov.info，请修改下面 path
+          file: coverage/lcov.info
+
+      # ---------- 2. 构建并发布（semantic-release） ----------
       - name: Build package (rollup)
         run: npm run build
 
@@ -61,10 +88,10 @@ jobs:
       - name: Checkout target repo
         uses: actions/checkout@v4
         with:
-          repository: ${{ env.TARGET_REPO }} # owner/repo 格式，例如 xing-lin/xing-lin.github.io
-          token: ${{ secrets.PAT_TOKEN }} # 必须存在并有 repo 权限
-          path: target_repo # 将目标仓库检出到 runner 下的 target_repo 目录
-          fetch-depth: 0 # 获取完整历史，便于 branch 操作
+          repository: ${{ env.TARGET_REPO }}
+          token: ${{ secrets.PAT_TOKEN }}
+          path: target_repo
+          fetch-depth: 0
 
       - name: Deploy storybook to target repo (checkout approach)
         env:
@@ -79,13 +106,11 @@ jobs:
             exit 1
           fi
 
-          # 读取 package.json 版本以构造 commit message
           PACKAGE_VERSION=$(node -p "require('${GITHUB_WORKSPACE}/package.json').version")
           echo "Deploying storybook v${PACKAGE_VERSION} to ${TARGET_REPO}:main (path: static/storybook-static)"
 
           cd "${TARGET_DIR}"
 
-          # 确保 main 分支存在并同步（如果不存在则创建）
           if git ls-remote --exit-code origin refs/heads/main >/dev/null 2>&1; then
             git fetch origin main
             git checkout main
@@ -105,7 +130,6 @@ jobs:
           echo "Copying new storybook static files..."
           cp -R "${SRC_DIR}/." "${TARGET_PATH}/"
 
-          # 设置 git user 信息
           git config user.name "github-actions[bot]" || true
           git config user.email "github-actions[bot]@users.noreply.github.com" || true
 
@@ -119,4 +143,4 @@ jobs:
           fi
 
       - name: Done
-        run: echo "Release + Storybook deploy finished."
+        run: echo "Test -> Release -> Storybook deploy finished."

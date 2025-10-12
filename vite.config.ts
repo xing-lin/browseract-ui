@@ -46,6 +46,7 @@ export default defineConfig({
       provider: 'v8',
       include: ['src'],
       exclude: ['src/**/index.ts'],
+      reporter: ['text', 'lcov', 'html', 'clover', 'json'],
     },
   },
 });
