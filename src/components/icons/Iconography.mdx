@@ -1,13 +1,21 @@
 import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/blocks';
 
 import { IconDislike } from './dislike/IconDislike';
+import { IconLike } from './like/IconLike';
 
 <Meta title="Iconography" />
 
 # Iconography
 
+- Icon 的大小可通过 `font-size` 来控制
+- Icon 的颜色可通过 `color` 来控制，`Active` 状态的 `color` 是固定的
+- Icon 大部分只是图片显示，没有用 `React.forwardRef` 来传入 `ref`，如果有需要点击事件，外层容器用 button 来包一层，语义化更好
+
 <IconGallery>
+  <IconItem name="Like">
+    <IconLike />
+  </IconItem>
   <IconItem name="Dislike">
-    <IconDislike name="Dislike" />
+    <IconDislike />
   </IconItem>
 </IconGallery>

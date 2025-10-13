@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconDislike } from './IconDislike';
+import { IconLike } from './IconLike';
 
-const meta: Meta<typeof IconDislike> = {
-  title: 'Icons/IconDislike',
-  component: IconDislike,
+const meta: Meta<typeof IconLike> = {
+  title: 'Icons/IconLike',
+  component: IconLike,
   argTypes: {
     color: {
       control: 'color',
@@ -16,7 +16,7 @@ const meta: Meta<typeof IconDislike> = {
 
 export default meta;
 
-type Story = StoryObj<typeof IconDislike>;
+type Story = StoryObj<typeof IconLike>;
 
 export const Default: Story = {
   args: {},
