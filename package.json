@@ -5,6 +5,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
+  "style": "dist/root.css",
   "scripts": {
     "build": "rm -rf dist/ && prettier --write src/ && npm run rollup",
     "rollup": "rollup -c --bundleConfigAsCjs",

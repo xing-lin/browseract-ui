@@ -1,0 +1,9 @@
+@import '../src/root.css';
+
+.icon-btn-hover:hover path[data-hover='green'] {
+  fill: var(--icon-fill-active-green);
+}
+
+.icon-btn-hover:hover path[data-hover='black'] {
+  fill: var(--icon-fill-active-black);
+}
