@@ -1,4 +1,3 @@
-import React from 'react';
 import { baseIconConfigs } from '../../constants';
 
 export interface IconMenuAgentProps extends React.SVGProps<SVGSVGElement> {

@@ -1,7 +1,5 @@
 import { baseIconConfigs } from '../constants';
 
-import React from 'react';
-
 export interface IconLikeProps extends React.SVGProps<SVGSVGElement> {
   active?: boolean;
 }
