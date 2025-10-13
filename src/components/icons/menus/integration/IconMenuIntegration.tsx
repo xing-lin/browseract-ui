@@ -1,10 +1,10 @@
 import { baseIconConfigs } from '../../constants';
-import { IconMenuProps } from '../../types';
+import { IconActiveProps } from '../../types';
 
 export function IconMenuIntegration({
   active = false,
   ...rest
-}: IconMenuProps) {
+}: IconActiveProps) {
   return (
     <svg
       {...baseIconConfigs}
