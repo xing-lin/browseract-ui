@@ -1,10 +1,7 @@
 import { baseIconConfigs } from '../../constants';
+import { IconActiveProps } from '../../types';
 
-export interface IconMenuAgentProps extends React.SVGProps<SVGSVGElement> {
-  active?: boolean;
-}
-
-export function IconMenuAgent({ active = false, ...rest }: IconMenuAgentProps) {
+export function IconMenuAgent({ active = false, ...rest }: IconActiveProps) {
   return (
     <svg
       {...baseIconConfigs}

@@ -1,10 +1,7 @@
 import { baseIconConfigs } from '../constants';
+import { IconActiveProps } from '../types';
 
-export interface IconDislikeProps extends React.SVGProps<SVGSVGElement> {
-  active?: boolean;
-}
-
-export function IconDislike({ active, ...restProps }: IconDislikeProps) {
+export function IconDislike({ active = false, ...restProps }: IconActiveProps) {
   return (
     <svg
       {...baseIconConfigs}

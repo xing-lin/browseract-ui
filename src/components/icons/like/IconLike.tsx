@@ -1,10 +1,7 @@
 import { baseIconConfigs } from '../constants';
+import { IconActiveProps } from '../types';
 
-export interface IconLikeProps extends React.SVGProps<SVGSVGElement> {
-  active?: boolean;
-}
-
-export function IconLike({ active = false, ...rest }: IconLikeProps) {
+export function IconLike({ active = false, ...rest }: IconActiveProps) {
   return (
     <svg
       {...baseIconConfigs}

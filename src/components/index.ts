@@ -1,14 +1,14 @@
 export { IconCopy } from './icons/copy/IconCopy';
-export { IconDislike, type IconDislikeProps } from './icons/dislike/IconDislike';
-export { IconLike, type IconLikeProps } from './icons/like/IconLike';
+export { IconDislike } from './icons/dislike/IconDislike';
+export { IconLike } from './icons/like/IconLike';
 
 // menus
-export { IconMenuAgent, type IconMenuAgentProps } from './icons/menus/agent/IconMenuAgent';
-export { IconMenuCredential, type IconMenuCredentialProps } from './icons/menus/credential/IconMenuCredential';
-export { IconMenuDashboard, type IconMenuDashboardProps } from './icons/menus/dashboard/IconMenuDashboard';
-export { IconMenuHome, type IconMenuHomeProps } from './icons/menus/home/IconMenuHome';
-export { IconMenuIntegration, type IconMenuIntegrationProps } from './icons/menus/integration/IconMenuIntegration';
-export { IconMenuLog, type IconMenuLogProps } from './icons/menus/log/IconMenuLog';
-export { IconMenuPlan, type IconMenuPlanProps } from './icons/menus/plan/IconMenuPlan';
-export { IconMenuTemplate, type IconMenuTemplateProps } from './icons/menus/template/IconMenuTemplate';
-export { IconMenuWorkflow, type IconMenuWorkflowProps } from './icons/menus/workflow/IconMenuWorkflow';
+export { IconMenuAgent } from './icons/menus/agent/IconMenuAgent';
+export { IconMenuCredential } from './icons/menus/credential/IconMenuCredential';
+export { IconMenuDashboard } from './icons/menus/dashboard/IconMenuDashboard';
+export { IconMenuHome } from './icons/menus/home/IconMenuHome';
+export { IconMenuIntegration } from './icons/menus/integration/IconMenuIntegration';
+export { IconMenuLog } from './icons/menus/log/IconMenuLog';
+export { IconMenuPlan } from './icons/menus/plan/IconMenuPlan';
+export { IconMenuTemplate } from './icons/menus/template/IconMenuTemplate';
+export { IconMenuWorkflow } from './icons/menus/workflow/IconMenuWorkflow';
