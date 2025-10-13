@@ -22,17 +22,25 @@ import { Meta } from '@storybook/addon-docs/blocks';
   - Icon 的宽和高可通过 `font-size` 来控制，宽和高默认值为 `1em`
   - Icon 的颜色可通过 `color` 来控制，`active` 状态的 `color` 已内置，使用`:root` 暴露的变量
 - 双色 Icon 目前是黑色 + 绿色，使用 `:root` 暴露的变量
-  - black 的 path 已添加自定义变量 `data-hover="black"` 用于元素（父容器） hover 时改变颜色
-  - green 的 path 已添加自定义变量 `data-hover="green"` 用于元素（父容器） hover 时改变颜色
+  - `data-hover: "black" | "green"` 用于元素（父容器） hover 时改变颜色
+  - `data-render: "stroke" | "fill"` 用于元素（父容器） hover 时使用正确填充类型
   - Demo:
 
     ```css
-    .icon-btn-hover:hover path[data-hover='green'] {
+    .icon-btn-hover:hover [data-hover='green']:not([data-render='stroke']) {
       fill: var(--icon-fill-active-green);
     }
 
-    .icon-btn-hover:hover path[data-hover='black'] {
+    .icon-btn-hover:hover [data-hover='black']:not([data-render='stroke']) {
       fill: var(--icon-fill-active-black);
+    }
+
+    .icon-btn-hover:hover [data-hover='green'][data-render='stroke'] {
+      stroke: var(--icon-fill-active-green);
+    }
+
+    .icon-btn-hover:hover [data-hover='black'][data-render='stroke'] {
+      stroke: var(--icon-fill-active-black);
     }
     ```
 

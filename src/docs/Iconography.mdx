@@ -4,6 +4,14 @@ import { IconDislike } from '../components/icons/dislike/IconDislike';
 import { IconLike } from '../components/icons/like/IconLike';
 import { IconCopy } from '../components/icons/copy/IconCopy';
 import { IconMenuAgent } from '../components/icons/menus/agent/IconMenuAgent';
+import { IconMenuCredential } from '../components/icons/menus/credential/IconMenuCredential.tsx';
+import { IconMenuDashboard } from '../components/icons/menus/dashboard/IconMenuDashboard.tsx';
+import { IconMenuHome } from '../components/icons/menus/home/IconMenuHome';
+import { IconMenuIntegration } from '../components/icons/menus/integration/IconMenuIntegration.tsx';
+import { IconMenuLog } from '../components/icons/menus/log/IconMenuLog.tsx';
+import { IconMenuPlan } from '../components/icons/menus/plan/IconMenuPlan.tsx';
+import { IconMenuTemplate } from '../components/icons/menus/template/IconMenuTemplate.tsx';
+import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWorkflow';
 
 <Meta title="Iconography" />
 
@@ -12,24 +20,50 @@ import { IconMenuAgent } from '../components/icons/menus/agent/IconMenuAgent';
 <br />
 <br />
 
+## Icons 常规图标，组件名以 Icon 开头，比如 `<IconCopy />`
+
 <IconGallery>
-  <IconItem name="IconCopy">
+  <IconItem name="Copy">
     <IconCopy />
   </IconItem>
-  <IconItem name="IconLike">
+  <IconItem name="Like">
     <IconLike />
   </IconItem>
-  <IconItem name="IconDislike">
+  <IconItem name="Dislike">
     <IconDislike />
   </IconItem>
 </IconGallery>
 
 <br />
 <br />
-## Menus 菜单图标
+## Menus 菜单图标，组件名以 IconMenu 开头，比如 `<IconMenuAgent />`
 
 <IconGallery>
-  <IconItem name="IconMenuAgent">
+  <IconItem name="Agent">
     <IconMenuAgent />
+  </IconItem>
+  <IconItem name="Credential">
+    <IconMenuCredential />
+  </IconItem>
+  <IconItem name="Dashboard">
+    <IconMenuDashboard />
+  </IconItem>
+  <IconItem name="Home">
+    <IconMenuHome />
+  </IconItem>
+  <IconItem name="Integration">
+    <IconMenuIntegration />
+  </IconItem>
+  <IconItem name="Log">
+    <IconMenuLog />
+  </IconItem>
+  <IconItem name="Plan">
+    <IconMenuPlan />
+  </IconItem>
+  <IconItem name="Template">
+    <IconMenuTemplate />
+  </IconItem>
+  <IconItem name="Workflow">
+    <IconMenuWorkflow />
   </IconItem>
 </IconGallery>
