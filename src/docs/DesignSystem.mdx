@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System" />
+
+# Design System
+
+## Colors
+
+```css
+:root {
+  /* 双色图标填充色 -- 黑色 */
+  --icon-fill-active-black: #1a1b28;
+  /* 双色图标填充色 -- 绿色 */
+  --icon-fill-active-green: #18c566;
+}
+```
+
+## Icons
+
+- Icon 作为图片展示，没有用 `React.forwardRef` 来传入 `ref`，如果需要点击事件，需要用 `<button>` 包裹，语义化更好
+- Icon 的大小可通过 `font-size` 来控制，宽和高默认值为 `1em`
+- Icon 的颜色可通过 `color` 来控制，`Active` 状态的 `color` 是固定的
+- 双色 Icon 目前是黑色 + 绿色，使用 `:root` 暴露的变量
+  - black 的 path 已添加自定义变量 `data-hover="black"` 用于元素（父容器） hover 时改变颜色
+  - green 的 path 已添加自定义变量 `data-hover="green"` 用于元素（父容器） hover 时改变颜色
+  - Demo:
+
+    ```css
+    .icon-btn-hover:hover path[data-hover='green'] {
+      fill: var(--icon-fill-active-green);
+    }
+
+    .icon-btn-hover:hover path[data-hover='black'] {
+      fill: var(--icon-fill-active-black);
+    }
+    ```
+
+    ```tsx
+    <button className="icon-btn-hover">
+      <IconMenuAgent {...args} />
+    </button>
+    ```
+
+<br />
+<br />

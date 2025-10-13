@@ -19,6 +19,11 @@ const preview: Preview = {
     docs: {
       codePanel: true,
     },
+    options: {
+      storySort: {
+        order: ['Design System', 'Iconography', 'Changelog'],
+      },
+    },
   },
 };
 
