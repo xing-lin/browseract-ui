@@ -1,3 +1,3 @@
-import './root.css';
+import './variables.css';
 
 export * from './components';

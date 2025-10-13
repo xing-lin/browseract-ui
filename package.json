@@ -5,7 +5,12 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
-  "style": "dist/root.css",
+  "style": "dist/variables.css",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "rm -rf dist/ && prettier --write src/ && npm run rollup",
     "rollup": "rollup -c --bundleConfigAsCjs",

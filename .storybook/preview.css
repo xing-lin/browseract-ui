@@ -1,4 +1,4 @@
-@import '../src/root.css';
+@import '../src/variables.css';
 
 .icon-btn-hover:hover [data-hover='green']:not([data-render='stroke']) {
   fill: var(--icon-fill-active-green);
