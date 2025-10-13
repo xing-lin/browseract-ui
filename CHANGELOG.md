@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/xing-lin/browseract-ui/compare/v1.1.0...v1.1.1) (2025-10-13)
+
+
+### Bug Fixes
+
+* file case issue ([dbe9b3e](https://github.com/xing-lin/browseract-ui/commit/dbe9b3e10b7af336da23b05d4ebba5cdf75fd733))
+
 # [1.1.0](https://github.com/xing-lin/browseract-ui/compare/v1.0.0...v1.1.0) (2025-10-13)
 
 
