@@ -12,14 +12,16 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && prettier --write src/ && npm run rollup",
+    "prebuild": "rm -rf dist/",
+    "build": "npm run rollup",
     "rollup": "rollup -c --bundleConfigAsCjs",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "prepare": "husky"
   },
   "peerDependencies": {
     "react": ">=19",
@@ -54,6 +56,8 @@
     "eslint-plugin-react-refresh": "0.4.23",
     "eslint-plugin-storybook": "9.1.10",
     "globals": "16.4.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.4",
     "markdown-to-jsx": "7.7.15",
     "playwright": "1.56.0",
     "prettier": "3.6.2",
@@ -91,5 +95,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "BrowserAct React Component Library"
+  "description": "BrowserAct React Component Library",
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "eslint --fix",
+    "*.{js,ts,jsx,tsx,css,scss,md,json}": "prettier --write"
+  }
 }
