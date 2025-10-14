@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconMenuHome } from './IconMenuHome';
 
 const meta: Meta<typeof IconMenuHome> = {

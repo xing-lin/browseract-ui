@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconLike } from './IconLike';
 
 const meta: Meta<typeof IconLike> = {
