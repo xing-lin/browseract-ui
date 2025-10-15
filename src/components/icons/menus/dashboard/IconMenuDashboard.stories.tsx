@@ -1,17 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconMenuDashboard } from './IconMenuDashboard';
+import { commonIconActiveArgTypes } from '../../constants';
 
 const meta: Meta<typeof IconMenuDashboard> = {
   title: 'Icons/menus/IconMenuDashboard',
   component: IconMenuDashboard,
-  argTypes: {
-    color: {
-      control: 'color',
-    },
-    active: {
-      control: 'boolean',
-    },
-  },
+  argTypes: commonIconActiveArgTypes,
 };
 
 export default meta;
@@ -31,7 +25,11 @@ export const Active: Story = {
 export const Hover: Story = {
   args: {},
   render: (args) => (
-    <button className="icon-btn-hover">
+    <button
+      className="icon-btn-hover"
+      type="button"
+      aria-label="menu dashboard"
+    >
       <IconMenuDashboard {...args} />
     </button>
   ),

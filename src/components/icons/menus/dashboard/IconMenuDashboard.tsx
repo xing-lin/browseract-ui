@@ -11,8 +11,6 @@ export function IconMenuDashboard({
       viewBox="0 0 20 20"
       {...rest}
     >
-      <title>Menu Dashboard</title>
-
       <path
         data-hover="black"
         fill={active ? 'var(--icon-fill-active-black)' : 'currentColor'}

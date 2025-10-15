@@ -8,8 +8,6 @@ export function IconMenuWorkflow({ active = false, ...rest }: IconActiveProps) {
       viewBox="0 0 16 16"
       {...rest}
     >
-      <title>Menu Workflow</title>
-
       <path
         data-hover="green"
         fill={active ? 'var(--icon-fill-active-green)' : 'currentColor'}

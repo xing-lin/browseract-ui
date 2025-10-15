@@ -5,11 +5,10 @@ export function IconMenuTemplate({ active = false, ...rest }: IconActiveProps) {
   return (
     <svg
       {...baseIconConfigs}
+      fill="none"
       viewBox="0 0 16 16"
       {...rest}
     >
-      <title>Menu Template</title>
-
       <rect
         data-hover="green"
         data-render="stroke"

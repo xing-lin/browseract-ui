@@ -11,8 +11,6 @@ export function IconMenuCredential({
       viewBox="0 0 16 16"
       {...rest}
     >
-      <title>Menu Credential</title>
-
       <path
         data-hover="black"
         fill={active ? 'var(--icon-fill-active-black)' : 'currentColor'}

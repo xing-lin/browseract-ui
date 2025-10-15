@@ -11,8 +11,6 @@ export function IconMenuIntegration({
       viewBox="0 0 16 16"
       {...rest}
     >
-      <title>Menu Integration</title>
-
       <path
         data-hover="black"
         data-render="stroke"

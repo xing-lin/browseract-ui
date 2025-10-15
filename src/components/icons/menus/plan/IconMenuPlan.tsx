@@ -8,8 +8,6 @@ export function IconMenuPlan({ active = false, ...rest }: IconActiveProps) {
       viewBox="0 0 16 16"
       {...rest}
     >
-      <title>Menu Plan</title>
-
       <path
         data-hover="green"
         fill={active ? 'var(--icon-fill-active-green)' : 'currentColor'}

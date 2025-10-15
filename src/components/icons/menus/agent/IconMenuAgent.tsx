@@ -8,8 +8,6 @@ export function IconMenuAgent({ active = false, ...rest }: IconActiveProps) {
       viewBox="0 0 16 16"
       {...rest}
     >
-      <title>Menu Agent</title>
-
       <path
         data-hover="black"
         fill={active ? 'var(--icon-fill-active-black)' : 'currentColor'}

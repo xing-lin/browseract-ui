@@ -1,17 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconLike } from './IconLike';
+import { commonIconActiveArgTypes } from '../constants';
 
 const meta: Meta<typeof IconLike> = {
   title: 'Icons/IconLike',
   component: IconLike,
-  argTypes: {
-    color: {
-      control: 'color',
-    },
-    active: {
-      control: 'boolean',
-    },
-  },
+  argTypes: commonIconActiveArgTypes,
 };
 
 export default meta;
