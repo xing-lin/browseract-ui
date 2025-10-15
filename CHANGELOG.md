@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/xing-lin/browseract-ui/compare/v1.1.2...v1.2.0) (2025-10-14)
+
+### Features
+
+- 提交添加图标 ([183803d](https://github.com/xing-lin/browseract-ui/commit/183803d0fc38ba6763334f874673a35e15d86244))
+
 ## [1.1.2](https://github.com/xing-lin/browseract-ui/compare/v1.1.1...v1.1.2) (2025-10-13)
 
 ### Bug Fixes
