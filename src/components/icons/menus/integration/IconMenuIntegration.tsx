@@ -9,6 +9,7 @@ export function IconMenuIntegration({
     <svg
       {...baseIconConfigs}
       viewBox="0 0 16 16"
+      fill="none"
       {...rest}
     >
       <path
