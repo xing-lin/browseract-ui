@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/xing-lin/browseract-ui/compare/v1.2.0...v1.3.0) (2025-10-16)
+
+### Bug Fixes
+
+- 修复图标填充错误 ([083b042](https://github.com/xing-lin/browseract-ui/commit/083b042d41dd1886cdc524b8f5d64d81a0c37d67))
+
+### Features
+
+- add plus icon ([d004918](https://github.com/xing-lin/browseract-ui/commit/d004918f6df687259095916f4b6e38388b77c714))
+- 添加 setting 图标 ([809c243](https://github.com/xing-lin/browseract-ui/commit/809c243d53ba3fb65bcb16458ba3df05105489c8))
+- 添加 sync 图标 ([f5d8f4a](https://github.com/xing-lin/browseract-ui/commit/f5d8f4ad7d7f799a2784488db39431b30779eb4c))
+- 添加loading图标 ([f9cde63](https://github.com/xing-lin/browseract-ui/commit/f9cde63e012a04c513cfea5f7459a2e510aed65d))
+- 添加图标，添加svgo来避免id重复 ([7f3e4db](https://github.com/xing-lin/browseract-ui/commit/7f3e4db69e4026f41b4cbc2e79f84105bce220f8))
+
 # [1.2.0](https://github.com/xing-lin/browseract-ui/compare/v1.1.2...v1.2.0) (2025-10-14)
 
 ### Features
