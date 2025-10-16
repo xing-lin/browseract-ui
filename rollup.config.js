@@ -30,7 +30,7 @@ export default [
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
       postcss({
-        extract: 'variables.css',
+        extract: 'index.css',
         minimize: true,
         sourceMap: true,
       }),

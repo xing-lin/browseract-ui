@@ -1,4 +1,9 @@
-import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  IconGallery,
+  IconItem,
+  Source,
+} from '@storybook/addon-docs/blocks';
 
 import { IconDislike } from '../components/icons/dislike/IconDislike';
 import { IconLike } from '../components/icons/like/IconLike';
@@ -20,7 +25,7 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
 <br />
 <br />
 
-## Icons 常规图标，组件名以 Icon 开头，比如 `<IconCopy />`
+## Icons 常规图标，组件名以 Icon 开头: `<IconCopy />`
 
 <IconGallery>
   <IconItem name="Copy">
@@ -36,7 +41,7 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
 
 <br />
 <br />
-## Menus 菜单图标，组件名以 IconMenu 开头，比如 `<IconMenuAgent />`
+## Menus 菜单图标，组件名以 IconMenu 开头: `<IconMenuAgent />`
 
 <IconGallery>
   <IconItem name="Agent">
@@ -67,3 +72,36 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
     <IconMenuWorkflow />
   </IconItem>
 </IconGallery>
+
+<br />
+<br />
+## 注意事项
+
+1. 图标默认作为无语义的装饰性图标 `aria-hidden="true"` ，没有用 `React.forwardRef` 来传入 `ref`, 如果需要点击事件，需要用 `<button>` 包裹，如果不包含其他文本 button 要添加 `aria-label`。
+
+   ```tsx
+   // Good
+   <button
+     type="button"
+     aria-label="Copy"
+     onClick={onClick}
+   >
+     <IconCopy />
+   </button>
+
+   // Bad
+   <IconCopy onClick={onClick} />
+   ```
+
+2. Icon 中的大小跟颜色，**可通过设置父级元素来传递**, `font-size` 和 `color`。
+3. 双色 Icon 目前是黑色 + 绿色，hover 可添加 `._icon-hover-dual-color` 达到悬浮时改色的效果。
+
+   ```tsx
+   <button className="_icon-hover-dual-color">
+     <IconMenuAgent {...args} />
+   </button>
+   ```
+
+```
+
+```

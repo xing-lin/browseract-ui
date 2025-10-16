@@ -1,0 +1,21 @@
+import { Meta, Source, Story, Canvas } from '@storybook/addon-docs/blocks';
+import * as IconSyncStories from '../../components/icons/sync/IconSync.stories';
+import AnimationsCss from '../../styles/animations.css?inline';
+
+<Meta title="STYLES/Animations" />
+
+# Animations
+
+## .\_spinner 旋转
+
+<Canvas
+  of={IconSyncStories.Loading}
+  sourceState="shown"
+  withToolbar="true"
+/>
+
+<Source
+  type="code"
+  language="css"
+  code={AnimationsCss}
+/>

@@ -1,0 +1,15 @@
+@layer _animations {
+  /* 旋转动画，用于 loading 旋转图标 */
+  ._spinner {
+    /*  name | duration | easing-function | iteration-count */
+    animation: spinner var(--animation-spinner-duration) linear infinite;
+    /* 以中心旋转 */
+    transform-origin: center;
+  }
+
+  @keyframes spinner {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
