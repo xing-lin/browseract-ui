@@ -5,6 +5,7 @@ import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import svgr from '@svgr/rollup';
 
 const packageJson = require('./package.json');
 
@@ -24,6 +25,7 @@ export default [
       },
     ],
     plugins: [
+      svgr(),
       peerDepsExternal(),
       resolve(),
       commonjs(),

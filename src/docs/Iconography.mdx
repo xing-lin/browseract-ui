@@ -3,11 +3,16 @@ import {
   IconGallery,
   IconItem,
   Source,
+  Story,
 } from '@storybook/addon-docs/blocks';
 
 import { IconDislike } from '../components/icons/dislike/IconDislike';
 import { IconLike } from '../components/icons/like/IconLike';
 import { IconCopy } from '../components/icons/copy/IconCopy';
+
+import { IconDecorHot } from '../components/icons/decors/hot/IconDecorHot';
+import { IconDecorMake } from '../components/icons/decors/make/IconDecorMake';
+
 import { IconMenuAgent } from '../components/icons/menus/agent/IconMenuAgent';
 import { IconMenuCredential } from '../components/icons/menus/credential/IconMenuCredential.tsx';
 import { IconMenuDashboard } from '../components/icons/menus/dashboard/IconMenuDashboard.tsx';
@@ -25,7 +30,7 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
 <br />
 <br />
 
-## Icons 常规图标，组件名以 Icon 开头: `<IconCopy />`
+## Icons 菜单图标，组件名前缀 Icon: `<IconCopy />`
 
 <IconGallery>
   <IconItem name="Copy">
@@ -41,35 +46,49 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
 
 <br />
 <br />
-## Menus 菜单图标，组件名以 IconMenu 开头: `<IconMenuAgent />`
+## Decors 菜单图标，组件名前缀 IconDecor: `<IconDecorHot />`
+
+<IconGallery>
+  <IconItem name="Make">
+    <IconDecorMake />
+  </IconItem>
+  <IconItem name="Hot">
+    <IconDecorHot />
+  </IconItem>
+
+</IconGallery>
+
+<br />
+<br />
+## Menus 菜单图标，组件名前缀 IconMenu: `<IconMenuAgent />`
 
 <IconGallery>
   <IconItem name="Agent">
-    <IconMenuAgent />
+    <IconMenuAgent className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Credential">
-    <IconMenuCredential />
+    <IconMenuCredential className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Dashboard">
-    <IconMenuDashboard />
+    <IconMenuDashboard className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Home">
-    <IconMenuHome />
+    <IconMenuHome className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Integration">
-    <IconMenuIntegration />
+    <IconMenuIntegration className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Log">
-    <IconMenuLog />
+    <IconMenuLog className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Plan">
-    <IconMenuPlan />
+    <IconMenuPlan className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Template">
-    <IconMenuTemplate />
+    <IconMenuTemplate className="_icon-hover-dual-color" />
   </IconItem>
   <IconItem name="Workflow">
-    <IconMenuWorkflow />
+    <IconMenuWorkflow className="_icon-hover-dual-color" />
   </IconItem>
 </IconGallery>
 

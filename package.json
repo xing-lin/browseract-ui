@@ -44,6 +44,7 @@
     "@storybook/addon-vitest": "9.1.10",
     "@storybook/react-vite": "9.1.10",
     "@storybook/testing-library": "0.2.2",
+    "@svgr/rollup": "8.1.0",
     "@testing-library/react": "16.3.0",
     "@types/node": "24.7.1",
     "@types/react": "19.2.2",
@@ -73,6 +74,7 @@
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.0",
     "vite": "npm:rolldown-vite@7.1.16",
+    "vite-plugin-svgr": "4.5.0",
     "vitest": "3.2.4"
   },
   "overrides": {
