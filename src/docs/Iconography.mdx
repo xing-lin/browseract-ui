@@ -6,9 +6,15 @@ import {
   Story,
 } from '@storybook/addon-docs/blocks';
 
-import { IconDislike } from '../components/icons/dislike/IconDislike';
-import { IconLike } from '../components/icons/like/IconLike';
 import { IconCopy } from '../components/icons/copy/IconCopy';
+import { IconDislike } from '../components/icons/dislike/IconDislike';
+import { IconExternalLink } from '../components/icons/external-link/IconExternalLink';
+import { IconLike } from '../components/icons/like/IconLike';
+import { IconLoading } from '../components/icons/loading/IconLoading.tsx';
+import { IconPlus } from '../components/icons/plus/IconPlus.tsx';
+import { IconPlusCircle } from '../components/icons/plus-circle/IconPlusCircle.tsx';
+import { IconSetting } from '../components/icons/setting/IconSetting.tsx';
+import { IconSync } from '../components/icons/sync/IconSync.tsx';
 
 import { IconDecorHot } from '../components/icons/decors/hot/IconDecorHot';
 import { IconDecorMake } from '../components/icons/decors/make/IconDecorMake';
@@ -36,11 +42,29 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
   <IconItem name="Copy">
     <IconCopy />
   </IconItem>
+  <IconItem name="Dislike">
+    <IconDislike />
+  </IconItem>
+  <IconItem name="ExternalLink">
+    <IconExternalLink />
+  </IconItem>
   <IconItem name="Like">
     <IconLike />
   </IconItem>
-  <IconItem name="Dislike">
-    <IconDislike />
+  <IconItem name="Loading">
+    <IconLoading />
+  </IconItem>
+  <IconItem name="Plus">
+    <IconPlus />
+  </IconItem>
+  <IconItem name="PlusCircle">
+    <IconPlusCircle />
+  </IconItem>
+  <IconItem name="Setting">
+    <IconSetting />
+  </IconItem>
+  <IconItem name="Sync">
+    <IconSync />
   </IconItem>
 </IconGallery>
 
@@ -49,13 +73,12 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
 ## Decors 菜单图标，组件名前缀 IconDecor: `<IconDecorHot />`
 
 <IconGallery>
-  <IconItem name="Make">
-    <IconDecorMake />
-  </IconItem>
   <IconItem name="Hot">
     <IconDecorHot />
   </IconItem>
-
+  <IconItem name="Make">
+    <IconDecorMake />
+  </IconItem>
 </IconGallery>
 
 <br />

@@ -19,6 +19,10 @@ const config: StorybookConfig = {
       config,
       defineConfig({
         plugins: [fixStorybookMockerEntryPlugin()],
+        build: {
+          // 不进行压缩，storybook 引入 css 作为文档，保留注释以及换行，方便查阅
+          cssMinify: false,
+        },
       }),
     ),
 };
