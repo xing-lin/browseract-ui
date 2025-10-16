@@ -26,7 +26,7 @@ export const Hover: Story = {
   args: {},
   render: (args) => (
     <button
-      className="icon-btn-hover"
+      className="_icon-hover-dual-color"
       type="button"
       aria-label="menu dashboard"
     >
