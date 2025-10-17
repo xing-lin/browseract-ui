@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/xing-lin/browseract-ui/compare/v1.4.0...v1.4.1) (2025-10-17)
+
+### Bug Fixes
+
+- 修复由于文件更名导致引入路径问题 ([cce8299](https://github.com/xing-lin/browseract-ui/commit/cce8299ae15380fbad581affffd049331d0b31b6))
+
 # [1.4.0](https://github.com/xing-lin/browseract-ui/compare/v1.3.0...v1.4.0) (2025-10-17)
 
 ### Features
