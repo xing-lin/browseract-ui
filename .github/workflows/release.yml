@@ -82,6 +82,67 @@ jobs:
         run: |
           echo "package.json version:"
           node -p "require('./package.json').version"
+      - name: Show package version (debug)
+        run: |
+          echo "package.json version:"
+          node -p "require('./package.json').version"
+
+      - name: Notify Feishu (publish)
+        # 不论成功失败都不影响后续步骤
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+          PACKAGE_VERSION: ${{ steps.show_package_version.outputs.version || '' }}
+        run: |
+          set -euo pipefail
+
+          # --- 获取版本（如果上一步没有输出，也从 package.json 读） ---
+          if [ -z "${PACKAGE_VERSION:-}" ]; then
+            PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          fi
+
+          # 规范化 tag 名（如果 version 已以 v 开头就直接用，否则加 v 前缀）
+          if [[ "${PACKAGE_VERSION}" == v* ]]; then
+            TAG_NAME="${PACKAGE_VERSION}"
+          else
+            TAG_NAME="v${PACKAGE_VERSION}"
+          fi
+
+          # Release URL 可直接打开 changelog
+          TAG_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
+
+          # 使用秒级 timestamp（若需毫秒可改为 python3 取毫秒）
+          timestamp=$(date +%s)
+
+          # 构造 string_to_sign（必须含真实换行）
+          string_to_sign=$(printf "%s\n%s" "$timestamp" "$FEISHU_SECRET")
+
+          # 用 string_to_sign 作为 HMAC key，对 空消息 做 HMAC-SHA256，输出二进制并 base64
+          sign=$(printf "" | openssl dgst -sha256 -hmac "$string_to_sign" -binary | base64)
+
+          # URL-encode 签名（优先使用 python3 的 urllib.parse.quote，稳妥）
+          if command -v python3 >/dev/null 2>&1; then
+            sign_enc=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip(), safe=''))" <<<"$sign")
+          else
+            # 兜底的简单 urlencode（只针对 base64 中常见字符）
+            sign_enc=$(echo -n "$sign" | sed -e 's/+/%2B/g' -e 's/\//%2F/g' -e 's/=/%3D/g')
+          fi
+
+          # 构造消息体（使用 cat <<JSON 保证变量会被展开且不产生多余缩进）
+          json=$(cat <<JSON
+          {"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: ${GITHUB_REPOSITORY}\nVersion: ${PACKAGE_VERSION}\nCommit: ${GITHUB_SHA}\nWorkflow: ${GITHUB_WORKFLOW}\nRelease: ${TAG_URL}"}}
+          JSON
+          )
+
+          # 发送请求；即使失败也不要让 step 返回非 0
+          FEISHU_URL="${FEISHU_WEBHOOK}?timestamp=${timestamp}&sign=${sign_enc}"
+          echo "Sending notification to Feishu (non-blocking)..."
+          resp=$(curl -s -X POST "${FEISHU_URL}" \
+            -H "Content-Type: application/json" \
+            -d "${json}" ) || true
+
+          echo "Feishu response: $resp"
 
       - name: Build Storybook static
         run: npm run build-storybook
