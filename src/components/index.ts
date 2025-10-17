@@ -1,6 +1,8 @@
 export { IconClose } from './icons/solos/close/IconClose';
 export { IconCopy } from './icons/solos/copy/IconCopy';
 export { IconDislike } from './icons/solos/dislike/IconDislike';
+export { IconEdit } from './icons/solos/edit/IconEdit';
+export { IconEditBlock } from './icons/solos/edit/IconEditBlock';
 export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
 export { IconGuideBook } from './icons/solos/guide-book/IconGuideBook';
 export { IconInternalLink } from './icons/solos/internal-link/IconInternalLink';
