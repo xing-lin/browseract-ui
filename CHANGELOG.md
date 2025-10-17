@@ -1,3 +1,21 @@
+# [1.4.0](https://github.com/xing-lin/browseract-ui/compare/v1.3.0...v1.4.0) (2025-10-17)
+
+### Features
+
+- 添加 <IconKeyIdentity /> 图标 ([9d9b08c](https://github.com/xing-lin/browseract-ui/commit/9d9b08ce522e71aed729c6db0e43140745b76301))
+- 添加 <IconKeySecurity /> 图标 ([6facb99](https://github.com/xing-lin/browseract-ui/commit/6facb997f0cc76d8da5867ac46bcc08056764230))
+- 添加 api-agent, api-workflow的图标 ([468a342](https://github.com/xing-lin/browseract-ui/commit/468a342a32de7790e7112352f361fd4a634698ec))
+- 添加 close 图标 ([8fbf464](https://github.com/xing-lin/browseract-ui/commit/8fbf464a1cd7d0b2193cbe694c2e913c0e528b6c))
+- 添加 warning 图标 ([3edd897](https://github.com/xing-lin/browseract-ui/commit/3edd897189c2500a3f13ac2fed51f37309aa9f21))
+- 添加✨图标 ([0c157e3](https://github.com/xing-lin/browseract-ui/commit/0c157e3a3bfd0e1bb9783a363bf4b9e0f0927106))
+- 添加内部链接跳转图标 ([d85fb0c](https://github.com/xing-lin/browseract-ui/commit/d85fb0c2673fce72174b7b75e4ffb259cb2f68c2))
+- 添加删除图标 ([a21255a](https://github.com/xing-lin/browseract-ui/commit/a21255ad1c5418054579d7648b4731ad5281b07f))
+- 添加双色 play 图标 ([4b12d83](https://github.com/xing-lin/browseract-ui/commit/4b12d83908f6f10a788fa72b44f2ce9b638f60d2))
+- 添加双色credit图标 ([43ec380](https://github.com/xing-lin/browseract-ui/commit/43ec380f52aac3c4a3cff087d9cd31a708e048e4))
+- 添加双色eye图标 ([e50c84a](https://github.com/xing-lin/browseract-ui/commit/e50c84a535c03e0e050e046c3c6c61e3b11562c0))
+- 添加指导书图标 ([34e0168](https://github.com/xing-lin/browseract-ui/commit/34e0168aa61cffd3c918b0338328382a0c76007d))
+- 添加编辑图标 ([4ab28b9](https://github.com/xing-lin/browseract-ui/commit/4ab28b9e56f9b485073ac8397c5579f964ee78e6))
+
 # [1.3.0](https://github.com/xing-lin/browseract-ui/compare/v1.2.0...v1.3.0) (2025-10-16)
 
 ### Bug Fixes
