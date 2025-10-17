@@ -195,7 +195,7 @@ jobs:
 
           # 构造消息体（使用 cat <<JSON 保证变量会被展开且不产生多余缩进）
           json=$(cat <<JSON
-          {"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: ${REPO_URL}\nVersion: ${PACKAGE_VERSION}\nRelease: ${TAG_URL}\nDocs:${DOC_URL}"}}
+          {"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: ${REPO_URL}\nVersion: ${PACKAGE_VERSION}\nRelease: ${TAG_URL}\nDocs:${DOCS_URL}"}}
           JSON
           )
 
