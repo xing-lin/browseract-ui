@@ -6,28 +6,28 @@ import {
   Story,
 } from '@storybook/addon-docs/blocks';
 
-import { IconCopy } from '../components/icons/copy/IconCopy';
-import { IconDislike } from '../components/icons/dislike/IconDislike';
-import { IconExternalLink } from '../components/icons/external-link/IconExternalLink';
-import { IconLike } from '../components/icons/like/IconLike';
-import { IconLoading } from '../components/icons/loading/IconLoading.tsx';
-import { IconPlus } from '../components/icons/plus/IconPlus.tsx';
-import { IconPlusCircle } from '../components/icons/plus-circle/IconPlusCircle.tsx';
-import { IconSetting } from '../components/icons/setting/IconSetting.tsx';
-import { IconSync } from '../components/icons/sync/IconSync.tsx';
+import { IconCopy } from '../components/icons/solos/copy/IconCopy';
+import { IconDislike } from '../components/icons/solos/dislike/IconDislike';
+import { IconExternalLink } from '../components/icons/solos/external-link/IconExternalLink';
+import { IconLike } from '../components/icons/solos/like/IconLike';
+import { IconLoading } from '../components/icons/solos/loading/IconLoading.tsx';
+import { IconPlus } from '../components/icons/solos/plus/IconPlus.tsx';
+import { IconPlusCircle } from '../components/icons/solos/plus-circle/IconPlusCircle.tsx';
+import { IconSetting } from '../components/icons/solos/setting/IconSetting.tsx';
+import { IconSync } from '../components/icons/solos/sync/IconSync.tsx';
 
 import { IconDecorHot } from '../components/icons/decors/hot/IconDecorHot';
 import { IconDecorMake } from '../components/icons/decors/make/IconDecorMake';
 
-import { IconMenuAgent } from '../components/icons/menus/agent/IconMenuAgent';
-import { IconMenuCredential } from '../components/icons/menus/credential/IconMenuCredential.tsx';
-import { IconMenuDashboard } from '../components/icons/menus/dashboard/IconMenuDashboard.tsx';
-import { IconMenuHome } from '../components/icons/menus/home/IconMenuHome';
-import { IconMenuIntegration } from '../components/icons/menus/integration/IconMenuIntegration.tsx';
-import { IconMenuLog } from '../components/icons/menus/log/IconMenuLog.tsx';
-import { IconMenuPlan } from '../components/icons/menus/plan/IconMenuPlan.tsx';
-import { IconMenuTemplate } from '../components/icons/menus/template/IconMenuTemplate.tsx';
-import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWorkflow';
+import { IconDuoAgent } from '../components/icons/duos/agent/IconDuoAgent';
+import { IconDuoCredential } from '../components/icons/duos/credential/IconDuoCredential.tsx';
+import { IconDuoDashboard } from '../components/icons/duos/dashboard/IconDuoDashboard.tsx';
+import { IconDuoHome } from '../components/icons/duos/home/IconDuoHome';
+import { IconDuoIntegration } from '../components/icons/duos/integration/IconDuoIntegration.tsx';
+import { IconDuoLog } from '../components/icons/duos/log/IconDuoLog.tsx';
+import { IconDuoPlan } from '../components/icons/duos/plan/IconDuoPlan.tsx';
+import { IconDuoTemplate } from '../components/icons/duos/template/IconDuoTemplate.tsx';
+import { IconDuoWorkflow } from '../components/icons/duos/workflow/IconDuoWorkflow';
 
 <Meta title="Iconography" />
 
@@ -83,35 +83,35 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
 
 <br />
 <br />
-## Menus 菜单图标，组件名前缀 IconMenu: `<IconMenuAgent />`
+## Duos 双色图标，组件名前缀 IconDuo: `<IconDuoAgent />`
 
 <IconGallery>
   <IconItem name="Agent">
-    <IconMenuAgent className="_icon-hover-dual-color" />
+    <IconDuoAgent className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Credential">
-    <IconMenuCredential className="_icon-hover-dual-color" />
+    <IconDuoCredential className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Dashboard">
-    <IconMenuDashboard className="_icon-hover-dual-color" />
+    <IconDuoDashboard className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Home">
-    <IconMenuHome className="_icon-hover-dual-color" />
+    <IconDuoHome className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Integration">
-    <IconMenuIntegration className="_icon-hover-dual-color" />
+    <IconDuoIntegration className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Log">
-    <IconMenuLog className="_icon-hover-dual-color" />
+    <IconDuoLog className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Plan">
-    <IconMenuPlan className="_icon-hover-dual-color" />
+    <IconDuoPlan className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Template">
-    <IconMenuTemplate className="_icon-hover-dual-color" />
+    <IconDuoTemplate className="_icon-hover-duo-color" />
   </IconItem>
   <IconItem name="Workflow">
-    <IconMenuWorkflow className="_icon-hover-dual-color" />
+    <IconDuoWorkflow className="_icon-hover-duo-color" />
   </IconItem>
 </IconGallery>
 
@@ -136,11 +136,11 @@ import { IconMenuWorkflow } from '../components/icons/menus/workflow/IconMenuWor
    ```
 
 2. Icon 中的大小跟颜色，**可通过设置父级元素来传递**, `font-size` 和 `color`。
-3. 双色 Icon 目前是黑色 + 绿色，hover 可添加 `._icon-hover-dual-color` 达到悬浮时改色的效果。
+3. 双色 Icon 目前是黑色 + 绿色，hover 可添加 `._icon-hover-duo-color` 达到悬浮时改色的效果。
 
    ```tsx
-   <button className="_icon-hover-dual-color">
-     <IconMenuAgent {...args} />
+   <button className="_icon-hover-duo-color">
+     <IconDuoAgent {...args} />
    </button>
    ```
 

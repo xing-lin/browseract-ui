@@ -1,24 +1,24 @@
-export { IconCopy } from './icons/copy/IconCopy';
-export { IconDislike } from './icons/dislike/IconDislike';
-export { IconExternalLink } from './icons/external-link/IconExternalLink';
-export { IconLike } from './icons/like/IconLike';
-export { IconLoading } from './icons/loading/IconLoading';
-export { IconPlus } from './icons/plus/IconPlus';
-export { IconPlusCircle } from './icons/plus-circle/IconPlusCircle';
-export { IconSetting } from './icons/setting/IconSetting';
-export { IconSync } from './icons/sync/IconSync';
+export { IconCopy } from './icons/solos/copy/IconCopy';
+export { IconDislike } from './icons/solos/dislike/IconDislike';
+export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
+export { IconLike } from './icons/solos/like/IconLike';
+export { IconLoading } from './icons/solos/loading/IconLoading';
+export { IconPlus } from './icons/solos/plus/IconPlus';
+export { IconPlusCircle } from './icons/solos/plus-circle/IconPlusCircle';
+export { IconSetting } from './icons/solos/setting/IconSetting';
+export { IconSync } from './icons/solos/sync/IconSync';
 
 // decors
 export { IconDecorHot } from './icons/decors/hot/IconDecorHot';
 export { IconDecorMake } from './icons/decors/make/IconDecorMake';
 
-// menus
-export { IconMenuAgent } from './icons/menus/agent/IconMenuAgent';
-export { IconMenuCredential } from './icons/menus/credential/IconMenuCredential';
-export { IconMenuDashboard } from './icons/menus/dashboard/IconMenuDashboard';
-export { IconMenuHome } from './icons/menus/home/IconMenuHome';
-export { IconMenuIntegration } from './icons/menus/integration/IconMenuIntegration';
-export { IconMenuLog } from './icons/menus/log/IconMenuLog';
-export { IconMenuPlan } from './icons/menus/plan/IconMenuPlan';
-export { IconMenuTemplate } from './icons/menus/template/IconMenuTemplate';
-export { IconMenuWorkflow } from './icons/menus/workflow/IconMenuWorkflow';
+// duos
+export { IconDuoAgent } from './icons/duos/agent/IconDuoAgent';
+export { IconDuoCredential } from './icons/duos/credential/IconDuoCredential';
+export { IconDuoDashboard } from './icons/duos/dashboard/IconDuoDashboard';
+export { IconDuoHome } from './icons/duos/home/IconDuoHome';
+export { IconDuoIntegration } from './icons/duos/integration/IconDuoIntegration';
+export { IconDuoLog } from './icons/duos/log/IconDuoLog';
+export { IconDuoPlan } from './icons/duos/plan/IconDuoPlan';
+export { IconDuoTemplate } from './icons/duos/template/IconDuoTemplate';
+export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';

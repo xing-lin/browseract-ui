@@ -1,20 +1,20 @@
 @layer _utilities {
   /* 双色图标，默认单色，悬浮时变双色 */
-  ._icon-hover-dual-color:hover
+  ._icon-hover-duo-color:hover
     [data-hover='green']:not([data-render='stroke']) {
     fill: var(--icon-fill-active-green);
   }
 
-  ._icon-hover-dual-color:hover
+  ._icon-hover-duo-color:hover
     [data-hover='black']:not([data-render='stroke']) {
     fill: var(--icon-fill-active-black);
   }
 
-  ._icon-hover-dual-color:hover [data-hover='green'][data-render='stroke'] {
+  ._icon-hover-duo-color:hover [data-hover='green'][data-render='stroke'] {
     stroke: var(--icon-fill-active-green);
   }
 
-  ._icon-hover-dual-color:hover [data-hover='black'][data-render='stroke'] {
+  ._icon-hover-duo-color:hover [data-hover='black'][data-render='stroke'] {
     stroke: var(--icon-fill-active-black);
   }
 }
