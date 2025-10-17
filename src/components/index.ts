@@ -11,6 +11,7 @@ export { IconPlusCircle } from './icons/solos/plus-circle/IconPlusCircle';
 export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconSpark } from './icons/solos/spark/IconSpark';
 export { IconSync } from './icons/solos/sync/IconSync';
+export { IconWarning } from './icons/solos/warning/IconWarning';
 
 // decors
 export { IconDecorApiAgent } from './icons/decors/api/IconDecorApiAgent';
