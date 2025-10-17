@@ -9,6 +9,8 @@ export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconSync } from './icons/solos/sync/IconSync';
 
 // decors
+export { IconDecorApiAgent } from './icons/decors/api/IconDecorApiAgent';
+export { IconDecorApiWorkflow } from './icons/decors/api/IconDecorApiWorkflow';
 export { IconDecorHot } from './icons/decors/hot/IconDecorHot';
 export { IconDecorMake } from './icons/decors/make/IconDecorMake';
 
@@ -16,9 +18,11 @@ export { IconDecorMake } from './icons/decors/make/IconDecorMake';
 export { IconDuoAgent } from './icons/duos/agent/IconDuoAgent';
 export { IconDuoCredential } from './icons/duos/credential/IconDuoCredential';
 export { IconDuoDashboard } from './icons/duos/dashboard/IconDuoDashboard';
+export { IconDuoEye } from './icons/duos/eye/IconDuoEye';
 export { IconDuoHome } from './icons/duos/home/IconDuoHome';
 export { IconDuoIntegration } from './icons/duos/integration/IconDuoIntegration';
 export { IconDuoLog } from './icons/duos/log/IconDuoLog';
 export { IconDuoPlan } from './icons/duos/plan/IconDuoPlan';
+export { IconDuoPlay } from './icons/duos/play/IconDuoPlay';
 export { IconDuoTemplate } from './icons/duos/template/IconDuoTemplate';
 export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';
