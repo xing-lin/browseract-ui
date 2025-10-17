@@ -20,6 +20,7 @@ export { IconDecorMake } from './icons/decors/make/IconDecorMake';
 // duos
 export { IconDuoAgent } from './icons/duos/agent/IconDuoAgent';
 export { IconDuoCredential } from './icons/duos/credential/IconDuoCredential';
+export { IconDuoCredit } from './icons/duos/credit/IconDuoCredit';
 export { IconDuoDashboard } from './icons/duos/dashboard/IconDuoDashboard';
 export { IconDuoEye } from './icons/duos/eye/IconDuoEye';
 export { IconDuoHome } from './icons/duos/home/IconDuoHome';
