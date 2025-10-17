@@ -1,3 +1,4 @@
+export { IconClose } from './icons/solos/close/IconClose';
 export { IconCopy } from './icons/solos/copy/IconCopy';
 export { IconDislike } from './icons/solos/dislike/IconDislike';
 export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
