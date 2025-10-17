@@ -1,6 +1,7 @@
 export { IconCopy } from './icons/solos/copy/IconCopy';
 export { IconDislike } from './icons/solos/dislike/IconDislike';
 export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
+export { IconGuideBook } from './icons/solos/guide-book/IconGuideBook';
 export { IconLike } from './icons/solos/like/IconLike';
 export { IconLoading } from './icons/solos/loading/IconLoading';
 export { IconPlus } from './icons/solos/plus/IconPlus';
