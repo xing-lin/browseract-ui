@@ -129,9 +129,13 @@ jobs:
             sign_enc=$(echo -n "$sign" | sed -e 's/+/%2B/g' -e 's/\//%2F/g' -e 's/=/%3D/g')
           fi
 
+          NPM_PKG_NAME=$(node -p "require('./package.json').name")
+          REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
+          NPM_URL="https://www.npmjs.com/package/${NPM_PKG_NAME}"
+
           # 构造消息体（使用 cat <<JSON 保证变量会被展开且不产生多余缩进）
           json=$(cat <<JSON
-          {"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: ${GITHUB_REPOSITORY}\nVersion: ${PACKAGE_VERSION}\nCommit: ${GITHUB_SHA}\nWorkflow: ${GITHUB_WORKFLOW}\nRelease: ${TAG_URL}"}}
+          {"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: ${REPO_URL}\nVersion: ${PACKAGE_VERSION}\nRelease: ${TAG_URL}\nNPM:${NPM_URL}"}}
           JSON
           )
 
