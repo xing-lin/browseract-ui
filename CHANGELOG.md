@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/xing-lin/browseract-ui/compare/v1.4.1...v1.5.0) (2025-10-20)
+
+### Features
+
+- 添加 IconKeyIdentityGrant 图标 ([725042a](https://github.com/xing-lin/browseract-ui/commit/725042a81e83b2bd26439ec4025667bd1a3216d5))
+- 添加 IconKeyIdentityRevoke 图标 ([24da173](https://github.com/xing-lin/browseract-ui/commit/24da1730f2cd6e75a96f5d7249260f5ee423934b))
+- 添加 IconShare 图标 ([d000b0b](https://github.com/xing-lin/browseract-ui/commit/d000b0bd35621dac4c268425b77838b6b704dfa9))
+
 ## [1.4.1](https://github.com/xing-lin/browseract-ui/compare/v1.4.0...v1.4.1) (2025-10-17)
 
 ### Bug Fixes
