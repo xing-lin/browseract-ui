@@ -40,3 +40,6 @@ export { IconDuoPlan } from './icons/duos/plan/IconDuoPlan';
 export { IconDuoPlay } from './icons/duos/play/IconDuoPlay';
 export { IconDuoTemplate } from './icons/duos/template/IconDuoTemplate';
 export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';
+
+// types
+export type { IconActiveProps } from './icons/types';
