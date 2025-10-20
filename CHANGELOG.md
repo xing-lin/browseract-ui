@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/xing-lin/browseract-ui/compare/v1.5.0...v1.6.0) (2025-10-20)
+
+### Bug Fixes
+
+- 添加导出的 IconActiveProps ([ca38af2](https://github.com/xing-lin/browseract-ui/commit/ca38af2c6e4252860a01edc00ddfb171122049be))
+
+### Features
+
+- 添加 IconCloseCircle 图标 ([2428f5e](https://github.com/xing-lin/browseract-ui/commit/2428f5eb0dd63576717bf161bd3fca42c4136b4d))
+- 添加 IconDuoMirrorImage 图标 ([01f2ac6](https://github.com/xing-lin/browseract-ui/commit/01f2ac675e8fa1db0dbc55516f30a64cb636377e))
+- 添加IconMinusCircle 图标 ([01841af](https://github.com/xing-lin/browseract-ui/commit/01841af688cbed70acfc25a920c00ce49a92c093))
+
 # [1.5.0](https://github.com/xing-lin/browseract-ui/compare/v1.4.1...v1.5.0) (2025-10-20)
 
 ### Features
