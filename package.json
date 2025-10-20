@@ -11,6 +11,9 @@
     "README.md",
     "LICENSE"
   ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "check": "npm run test:coverage && npm run build && npm run build-storybook",
     "prebuild": "rm -rf dist/",

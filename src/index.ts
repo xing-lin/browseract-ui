@@ -1,3 +1,3 @@
-export * from './index.css';
+import './index.css';
 
 export * from './components';
