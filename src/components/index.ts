@@ -37,6 +37,7 @@ export { IconDuoEye } from './icons/duos/eye/IconDuoEye';
 export { IconDuoHome } from './icons/duos/home/IconDuoHome';
 export { IconDuoIntegration } from './icons/duos/integration/IconDuoIntegration';
 export { IconDuoLog } from './icons/duos/log/IconDuoLog';
+export { IconDuoMirrorImage } from './icons/duos/mirror-image/IconDuoMirrorImage';
 export { IconDuoPlan } from './icons/duos/plan/IconDuoPlan';
 export { IconDuoPlay } from './icons/duos/play/IconDuoPlay';
 export { IconDuoTemplate } from './icons/duos/template/IconDuoTemplate';
