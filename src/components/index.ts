@@ -8,6 +8,8 @@ export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
 export { IconGuideBook } from './icons/solos/guide-book/IconGuideBook';
 export { IconInternalLink } from './icons/solos/internal-link/IconInternalLink';
 export { IconKeyIdentity } from './icons/solos/key/IconKeyIdentity';
+export { IconKeyIdentityGrant } from './icons/solos/key/IconKeyIdentityGrant';
+export { IconKeyIdentityRevoke } from './icons/solos/key/IconKeyIdentityRevoke';
 export { IconKeySecurity } from './icons/solos/key/IconKeySecurity';
 export { IconLike } from './icons/solos/like/IconLike';
 export { IconLoading } from './icons/solos/loading/IconLoading';
