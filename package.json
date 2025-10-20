@@ -62,6 +62,7 @@
     "lint-staged": "16.2.4",
     "markdown-to-jsx": "7.7.15",
     "playwright": "1.56.0",
+    "postcss-import": "16.1.1",
     "prettier": "3.6.2",
     "react": "19.2.0",
     "react-dom": "19.2.0",

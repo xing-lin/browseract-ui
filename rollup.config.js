@@ -6,6 +6,7 @@ import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
+import postcssImport from 'postcss-import';
 
 const packageJson = require('./package.json');
 
@@ -32,7 +33,9 @@ export default [
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
       postcss({
-        extract: 'index.css',
+        extensions: ['.css'],
+        plugins: [postcssImport()], // 处理 CSS 文件里的 @import
+        extract: true,
         minimize: true,
         sourceMap: true,
       }),
