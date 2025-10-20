@@ -11,6 +11,8 @@ export const baseIconConfigs: SVGProps<SVGSVGElement> = Object.freeze({
 });
 
 export const decorIconConfigs: SVGProps<SVGSVGElement> = Object.freeze({
+  width: '1em',
+  height: '1em',
   focusable: false,
   'aria-hidden': true,
 });
