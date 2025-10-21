@@ -203,6 +203,14 @@ import { IconDuoWorkflow } from '../components/icons/duos/workflow/IconDuoWorkfl
 <br />
 ## 注意事项
 
+<a
+  href="https://xing-lin.github.io/blog/2025/10/16/svg-a11y"
+  target="_blank"
+  style={{ color: 'blue' }}
+>
+  <span>可访问性最佳实践</span>
+</a>
+
 1. 图标默认作为无语义的装饰性图标 `aria-hidden="true"` ，没有用 `React.forwardRef` 来传入 `ref`, 如果需要点击事件，需要用 `<button>` 包裹，如果不包含其他文本 button 要添加 `aria-label`。
 
    ```tsx
