@@ -58,7 +58,12 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       include: ['src'],
-      exclude: ['src/**/index.ts', 'src/**/*.types.ts', 'src/**/types.ts'],
+      exclude: [
+        'src/**/index.ts',
+        'src/**/*.types.ts',
+        'src/**/types.ts',
+        'playground/**', // 排除 playground 开发测试文件
+      ],
       reporter: ['text', 'lcov', 'html', 'clover', 'json'],
     },
   },

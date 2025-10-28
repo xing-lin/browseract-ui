@@ -1,0 +1,32 @@
+# Development and testing files
+playground/
+src/
+.storybook/
+coverage/
+
+# Config files
+*.config.js
+*.config.ts
+.eslintrc*
+.prettierrc*
+tsconfig.json
+
+# Docs
+*.mdx
+
+# Tests
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+**/*.stories.tsx
+
+# CI/CD
+.github/
+.husky/
+
+# IDE
+.vscode/
+.idea/
+*.log
+
