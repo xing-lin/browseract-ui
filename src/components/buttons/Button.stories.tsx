@@ -398,3 +398,36 @@ export const IconPositionStart: Story = {
     iconPosition: 'start',
   },
 };
+
+// Block Tests
+export const BlockPrimary: Story = {
+  args: {
+    type: 'primary',
+    children: 'Block Primary Button',
+    block: true,
+  },
+};
+
+export const BlockDefault: Story = {
+  args: {
+    type: 'default',
+    children: 'Block Default Button',
+    block: true,
+  },
+};
+
+export const BlockText: Story = {
+  args: {
+    type: 'text',
+    children: 'Block Text Button (block ignored)',
+    block: true,
+  },
+};
+
+export const BlockLink: Story = {
+  args: {
+    type: 'link',
+    children: 'Block Link Button (block ignored)',
+    block: true,
+  },
+};
