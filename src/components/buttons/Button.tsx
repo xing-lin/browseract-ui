@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { IconLoading } from '../icons/solos/loading/IconLoading';
 import { cn } from '../../utils/cn';
 import type { ButtonProps } from './button.types';
