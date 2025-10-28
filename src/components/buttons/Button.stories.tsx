@@ -186,7 +186,7 @@ export const DefaultGhost: Story = {
     icon: <IconPlus />,
   },
   render: (args) => (
-    <div className="bg-black p-4">
+    <div className="bg-[#bec8c8] p-4">
       <Button {...args} />
     </div>
   ),
@@ -258,7 +258,7 @@ export const DashedGhost: Story = {
     icon: <IconPlus />,
   },
   render: (args) => (
-    <div className="bg-black p-4">
+    <div className="bg-[#bec8c8] p-4">
       <Button {...args} />
     </div>
   ),

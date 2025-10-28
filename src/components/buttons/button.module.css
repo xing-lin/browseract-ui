@@ -5,7 +5,7 @@
  */
 
 @layer components {
-  @layer btn-base, btn-type, btn-size, btn-shape, btn-state, btn-danger, btn-ghost, btn-loading;
+  @layer btn-base, btn-type, btn-size, btn-shape, btn-danger, btn-ghost,  btn-loading, btn-state;
 
   /* ========== Base Layer ========== */
   @layer btn-base {
@@ -193,30 +193,6 @@
     }
   }
 
-  /* ========== State Layer ========== */
-  @layer btn-state {
-    .btn-base:disabled {
-      cursor: not-allowed;
-      color: var(--color-text-disabled);
-      border-color: var(--color-border-disabled);
-      background-color: var(--color-bg-disabled);
-      /* disabled 状态重置为透明（无发光） */
-      --btn-text-shadow-color: transparent;
-      --btn-svg-shadow-color: transparent;
-    }
-
-    .btn-text:disabled,
-    .btn-link:disabled {
-      color: var(--color-text-disabled);
-      background-color: var(--color-text-bg-disabled);
-      border-color: transparent;
-    }
-
-    .btn-block {
-      width: 100%;
-    }
-  }
-
   /* ========== Danger Layer ========== */
   @layer btn-danger {
     /* danger 覆盖 default/dashed/text 样式 */
@@ -337,6 +313,30 @@
     .btn-loading:hover svg,
     .btn-loading:active svg {
       filter: inherit;
+    }
+  }
+
+  /* ========== State Layer ========== */
+  @layer btn-state {
+    .btn-base:disabled {
+      cursor: not-allowed;
+      color: var(--color-text-disabled);
+      border-color: var(--color-border-disabled);
+      background-color: var(--color-bg-disabled);
+      /* disabled 状态重置为透明（无发光） */
+      --btn-text-shadow-color: transparent;
+      --btn-svg-shadow-color: transparent;
+    }
+
+    .btn-text:disabled,
+    .btn-link:disabled {
+      color: var(--color-text-disabled);
+      background-color: var(--color-text-bg-disabled);
+      border-color: transparent;
+    }
+
+    .btn-block {
+      width: 100%;
     }
   }
 }
