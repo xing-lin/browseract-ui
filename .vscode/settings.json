@@ -3,5 +3,11 @@
   "editor.formatOnSave": true,
   "editor.wordWrap": "on",
   "editor.bracketPairColorization.enabled": true,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "tailwindCSS.experimental.classRegex": [
+    ["Classes \\=([^;]*);", "'([^']*)'"],
+    ["Classes \\=([^;]*);", "\"([^\"]*)\""],
+    ["Classes \\=([^;]*);", "\\`([^\\`]*)\\`"]
+  ],
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Styles"]
 }

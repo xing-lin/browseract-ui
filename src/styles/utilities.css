@@ -17,4 +17,30 @@
   ._icon-hover-duo-color:hover [data-hover='black'][data-render='stroke'] {
     stroke: var(--icon-fill-active-black);
   }
+
+  /* 覆盖 tailwind 的文本大小 */
+  .text-xs {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+  }
+
+  .text-sm {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+  }
+
+  .text-base {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  .text-lg {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+  }
+
+  .text-xl {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+  }
 }

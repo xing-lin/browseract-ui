@@ -44,5 +44,9 @@ export { IconDuoPlay } from './icons/duos/play/IconDuoPlay';
 export { IconDuoTemplate } from './icons/duos/template/IconDuoTemplate';
 export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';
 
+// button
+export { Button } from './buttons/Button';
+export type { ButtonProps, ButtonType, ButtonSize, ButtonShape, ButtonIconPosition } from './buttons/button.types';
+
 // types
 export type { IconActiveProps } from './icons/types';

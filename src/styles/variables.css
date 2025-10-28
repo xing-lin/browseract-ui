@@ -85,12 +85,22 @@
   --color-text-tertiary: rgba(0, 0, 0, 0.45);
   --color-text-quaternary: rgba(0, 0, 0, 0.25);
 
+  --color-text-hover: rgba(0, 0, 0, 0.88);
+  --color-text-bg-hover: rgba(0, 0, 0, 0.04);
+  --color-text-active: rgba(0, 0, 0, 0.88);
+  --color-text-bg-active: rgba(0, 0, 0, 0.15);
+  --color-text-disabled: rgba(0, 0, 0, 0.25);
+  --color-text-bg-disabled: transparent;
+
   /* 边框色 */
   --color-border: #d9d9d9;
+  --color-border-disabled: #d9d9d9;
   --color-border-secondary: #f0f0f0;
 
   /* 背景色 */
   --color-bg-mask: #1f1f1f;
+  --color-bg-white: #ffffff;
+  --color-bg-disabled: rgba(0, 0, 0, 0.04);
 
   /* 填充色 */
   --color-fill: rgba(0, 0, 0, 0.15);
