@@ -86,6 +86,7 @@ export const PrimaryIconOnly: Story = {
     type: 'primary',
     size: 'middle',
     icon: <IconPlus />,
+    'aria-label': 'Primary Icon Only',
   },
 };
 
@@ -155,6 +156,7 @@ export const DefaultIconOnly: Story = {
   args: {
     type: 'default',
     icon: <IconPlus />,
+    'aria-label': 'Default Icon Only',
   },
 };
 
@@ -226,6 +228,7 @@ export const DashedIconOnly: Story = {
   args: {
     type: 'dashed',
     icon: <IconPlus />,
+    'aria-label': 'Dashed Icon Only',
   },
 };
 
@@ -297,6 +300,7 @@ export const TextIconOnly: Story = {
   args: {
     type: 'text',
     icon: <IconPlus />,
+    'aria-label': 'Text Icon Only',
   },
 };
 
@@ -354,6 +358,7 @@ export const LinkIconOnly: Story = {
   args: {
     type: 'link',
     icon: <IconPlus />,
+    'aria-label': 'Link Icon Only',
   },
 };
 
