@@ -35,6 +35,10 @@ const meta: Meta<typeof Button> = {
     block: {
       control: 'boolean',
     },
+    iconPosition: {
+      control: 'select',
+      options: ['start', 'end'],
+    },
   },
 };
 
@@ -368,5 +372,24 @@ export const LinkDanger: Story = {
     children: 'Link Button',
     danger: true,
     icon: <IconDelete />,
+  },
+};
+
+// Icon Position Tests
+export const IconPositionEnd: Story = {
+  args: {
+    type: 'primary',
+    children: 'Icon at End',
+    icon: <IconPlus />,
+    iconPosition: 'end',
+  },
+};
+
+export const IconPositionStart: Story = {
+  args: {
+    type: 'default',
+    children: 'Icon at Start',
+    icon: <IconPlus />,
+    iconPosition: 'start',
   },
 };
