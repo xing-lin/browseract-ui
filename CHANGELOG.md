@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/xing-lin/browseract-ui/compare/v1.6.0...v1.7.0) (2025-10-28)
+
+### Bug Fixes
+
+- 移除多余的 React 导入，修正覆盖率 ([f0e43a7](https://github.com/xing-lin/browseract-ui/commit/f0e43a703107f3a84752e769dbfeb59eeb37df2a))
+
+### Features
+
+- 添加 cn 方法 ([f7f7292](https://github.com/xing-lin/browseract-ui/commit/f7f7292cf752af85fb2f8eacdbd83a94e90449cc))
+- 添加 cn 方法的导出 ([49e09ad](https://github.com/xing-lin/browseract-ui/commit/49e09ad81207d5badc5b15e18bebc67242f8563e))
+- 添加Button 组件 ([8066cfd](https://github.com/xing-lin/browseract-ui/commit/8066cfdaf6ae03c3ffd72b27572f8392ccee22f6))
+- 添加颜色变量 ([8832189](https://github.com/xing-lin/browseract-ui/commit/88321897f25b88ec5ee1999e4b139e824b19a230))
+
 # [1.6.0](https://github.com/xing-lin/browseract-ui/compare/v1.5.0...v1.6.0) (2025-10-20)
 
 ### Bug Fixes
