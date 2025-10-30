@@ -189,9 +189,21 @@
 
     .btn-only-icon {
       padding: 4px;
-      height: fit-content;
       aspect-ratio: 1/1;
       border-radius: 4px;
+    }
+
+    /* only-icon 时各尺寸的 font-size 增加 2px */
+    .btn-only-icon.btn-size-small {
+      font-size: calc(var(--font-size-xs) + 2px);
+    }
+
+    .btn-only-icon.btn-size-middle {
+      font-size: calc(var(--font-size-sm) + 2px);
+    }
+
+    .btn-only-icon.btn-size-large {
+      font-size: calc(var(--font-size-base) + 2px);
     }
 
     /* link 类型按钮不受 size 层的 padding 影响 */
@@ -341,6 +353,12 @@
       color: var(--color-text-disabled);
       background-color: var(--color-text-bg-disabled);
       border-color: transparent;
+    }
+
+    /* 只有 text 和 link 类型的 only-icon 按钮使用 fit-content 高度 */
+    .btn-text.btn-only-icon,
+    .btn-link.btn-only-icon {
+      height: fit-content;
     }
 
     .btn-block {
