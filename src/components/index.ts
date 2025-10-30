@@ -6,6 +6,8 @@ export { IconDislike } from './icons/solos/dislike/IconDislike';
 export { IconEdit } from './icons/solos/edit/IconEdit';
 export { IconEditBlock } from './icons/solos/edit/IconEditBlock';
 export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
+export { IconEllipsis } from './icons/solos/ellipsis/IconEllipsis';
+export { IconExpand } from './icons/solos/expand/IconExpand';
 export { IconGuideBook } from './icons/solos/guide-book/IconGuideBook';
 export { IconInternalLink } from './icons/solos/internal-link/IconInternalLink';
 export { IconKeyIdentity } from './icons/solos/key/IconKeyIdentity';
