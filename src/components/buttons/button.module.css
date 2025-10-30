@@ -190,7 +190,6 @@
     .btn-only-icon {
       padding: 4px;
       aspect-ratio: 1/1;
-      border-radius: 4px;
     }
 
     /* only-icon 时各尺寸的 font-size 增加 2px */
@@ -359,6 +358,7 @@
     .btn-text.btn-only-icon,
     .btn-link.btn-only-icon {
       height: fit-content;
+      border-radius: 4px;
     }
 
     .btn-block {
