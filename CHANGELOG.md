@@ -1,3 +1,9 @@
+## [1.9.1](https://github.com/xing-lin/browseract-ui/compare/v1.9.0...v1.9.1) (2025-10-30)
+
+### Bug Fixes
+
+- 调整 only icon button 的border radius ([d602f27](https://github.com/xing-lin/browseract-ui/commit/d602f27ef6a014004aade4581caca5b463cddf01))
+
 # [1.9.0](https://github.com/xing-lin/browseract-ui/compare/v1.8.0...v1.9.0) (2025-10-30)
 
 ### Features
