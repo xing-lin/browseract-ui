@@ -19,6 +19,7 @@ export { IconLoading } from './icons/solos/loading/IconLoading';
 export { IconMinusCircle } from './icons/solos/minus/IconMinusCircle';
 export { IconPlus } from './icons/solos/plus/IconPlus';
 export { IconPlusCircle } from './icons/solos/plus/IconPlusCircle';
+export { IconRight } from './icons/solos/right/IconRight';
 export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconShare } from './icons/solos/share/IconShare';
 export { IconSpark } from './icons/solos/spark/IconSpark';
