@@ -1,3 +1,9 @@
+# [1.8.0](https://github.com/xing-lin/browseract-ui/compare/v1.7.0...v1.8.0) (2025-10-30)
+
+### Features
+
+- 添加 IconEllipsis 和 IconExpand 图标 ([ee9a5e4](https://github.com/xing-lin/browseract-ui/commit/ee9a5e41795d7bd94a8eb968dcf55781bf83fd3a))
+
 # [1.7.0](https://github.com/xing-lin/browseract-ui/compare/v1.6.0...v1.7.0) (2025-10-28)
 
 ### Bug Fixes
