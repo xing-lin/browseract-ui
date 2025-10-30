@@ -112,7 +112,7 @@
     }
 
     .btn-text {
-      border-color: transparent;
+      border: none;
       background-color: transparent;
       color: var(--color-text);
     }
@@ -128,7 +128,7 @@
     }
 
     .btn-link {
-      border-color: transparent;
+      border: none;
       background-color: transparent;
       color: var(--color-link);
     }
@@ -188,8 +188,16 @@
     }
 
     .btn-only-icon {
-      padding: 0;
+      padding: 4px;
+      height: fit-content;
       aspect-ratio: 1/1;
+      border-radius: 4px;
+    }
+
+    /* link 类型按钮不受 size 层的 padding 影响 */
+    .btn-link {
+      padding: 0;
+      height: fit-content;
     }
   }
 
