@@ -1,3 +1,9 @@
+# [1.9.0](https://github.com/xing-lin/browseract-ui/compare/v1.8.0...v1.9.0) (2025-10-30)
+
+### Features
+
+- 添加 IconRight 图标 ([5bb13b4](https://github.com/xing-lin/browseract-ui/commit/5bb13b4e5fb8a23940529a714cb29e3a3eceed83))
+
 # [1.8.0](https://github.com/xing-lin/browseract-ui/compare/v1.7.0...v1.8.0) (2025-10-30)
 
 ### Features
