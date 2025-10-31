@@ -19,17 +19,17 @@
   }
 
   /* 覆盖 tailwind 的文本大小 */
-  .text-xs {
+  ._text-xs {
     font-size: var(--font-size-xs);
     line-height: var(--line-height-xs);
   }
 
-  .text-sm {
+  ._text-sm {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
   }
 
-  .text-base {
+  ._text-base {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
   }
@@ -39,7 +39,7 @@
     line-height: var(--line-height-lg);
   }
 
-  .text-xl {
+  ._text-xl {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-xl);
   }

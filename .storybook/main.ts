@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig, defineConfig, Plugin } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -18,7 +19,7 @@ const config: StorybookConfig = {
     mergeConfig(
       config,
       defineConfig({
-        plugins: [fixStorybookMockerEntryPlugin()],
+        plugins: [tailwindcss(), fixStorybookMockerEntryPlugin()],
         build: {
           // 不进行压缩，storybook 引入 css 作为文档，保留注释以及换行，方便查阅
           cssMinify: false,

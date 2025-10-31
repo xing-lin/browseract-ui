@@ -21,7 +21,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Iconography', 'Changelog'],
+        order: ['Styles', 'Components', 'Utils', 'Icons'],
       },
     },
   },

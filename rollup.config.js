@@ -11,7 +11,26 @@ import tailwindcss from '@tailwindcss/postcss';
 
 const packageJson = require('./package.json');
 
+const commonPlugins = [
+  svgr(),
+  peerDepsExternal(),
+  resolve(),
+  commonjs(),
+  typescript({ tsconfig: './tsconfig.json' }),
+];
+
+const commonPluginsWithTerser = [...commonPlugins, terser()];
+
+const postcssPlugin = postcss({
+  extensions: ['.css'],
+  plugins: [postcssImport(), tailwindcss()],
+  extract: true,
+  minimize: true,
+  sourceMap: true,
+});
+
 export default [
+  // 主入口
   {
     input: 'src/index.ts',
     output: [
@@ -26,27 +45,48 @@ export default [
         sourcemap: true,
       },
     ],
+    plugins: [...commonPluginsWithTerser, postcssPlugin],
+    external: ['react', 'react-dom'],
+  },
+  // 客户端工具入口（如果需要）
+  {
+    input: 'src/utils/client/index.ts',
+    output: [
+      {
+        file: 'dist/utils/client.js',
+        format: 'cjs',
+        sourcemap: true,
+        banner: "'use client';",
+      },
+      {
+        file: 'dist/utils/client.mjs',
+        format: 'esm',
+        sourcemap: true,
+        banner: "'use client';",
+      },
+    ],
     plugins: [
-      svgr(),
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
-      terser(),
-      postcss({
-        extensions: ['.css'],
-        plugins: [postcssImport(), tailwindcss()],
-        extract: true,
-        minimize: true,
-        sourceMap: true,
+      ...commonPlugins,
+      terser({
+        format: {
+          comments: false,
+          preamble: "'use client';", // 保留 'use client' 指令
+        },
       }),
     ],
     external: ['react', 'react-dom'],
   },
+  // 类型定义 - 主入口
   {
     input: 'src/index.ts',
     output: [{ file: packageJson.types }],
     plugins: [dts.default()],
     external: [/\.css$/],
+  },
+  // 类型定义 - 客户端工具
+  {
+    input: 'src/utils/client/index.ts',
+    output: [{ file: 'dist/utils/client.d.ts' }],
+    plugins: [dts.default()],
   },
 ];

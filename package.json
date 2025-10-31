@@ -6,6 +6,21 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "style": "dist/index.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    },
+    "./utils/client": {
+      "types": "./dist/utils/client.d.ts",
+      "import": "./dist/utils/client.mjs",
+      "require": "./dist/utils/client.js",
+      "default": "./dist/utils/client.mjs"
+    },
+    "./style.css": "./dist/index.css"
+  },
   "files": [
     "dist",
     "README.md",

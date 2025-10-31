@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef } from 'react';
 import { IconLoading } from '../icons/solos/loading/IconLoading';
 import { cn } from '../../utils/cn';
