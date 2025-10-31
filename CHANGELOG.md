@@ -1,3 +1,13 @@
+# [1.10.0](https://github.com/xing-lin/browseract-ui/compare/v1.9.1...v1.10.0) (2025-10-31)
+
+### Bug Fixes
+
+- 调整 only icon button 的border radius ([5b051df](https://github.com/xing-lin/browseract-ui/commit/5b051df1c9723d531af2a8d3cad97ec3c5ded404))
+
+### Features
+
+- add copyText util ([c60d8d6](https://github.com/xing-lin/browseract-ui/commit/c60d8d6ccd39e1ed61f4d2fcef0488e74d4842d0))
+
 ## [1.9.1](https://github.com/xing-lin/browseract-ui/compare/v1.9.0...v1.9.1) (2025-10-30)
 
 ### Bug Fixes
