@@ -7,7 +7,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
 import postcssImport from 'postcss-import';
-import tailwindcss from '@tailwindcss/postcss';
 
 const packageJson = require('./package.json');
 
@@ -23,7 +22,7 @@ const commonPluginsWithTerser = [...commonPlugins, terser()];
 
 const postcssPlugin = postcss({
   extensions: ['.css'],
-  plugins: [postcssImport(), tailwindcss()],
+  plugins: [postcssImport()],
   extract: true,
   minimize: true,
   sourceMap: true,

@@ -45,15 +45,10 @@
   },
   "peerDependencies": {
     "clsx": ">=2",
-    "tailwind-merge": ">=3",
     "react": ">=19",
     "react-dom": ">=19",
+    "tailwind-merge": ">=3",
     "tailwindcss": ">=4"
-  },
-  "peerDependenciesMeta": {
-    "tailwindcss": {
-      "optional": false
-    }
   },
   "devDependencies": {
     "@chromatic-com/storybook": "4.1.1",
