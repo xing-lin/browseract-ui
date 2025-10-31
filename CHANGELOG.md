@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/xing-lin/browseract-ui/compare/v1.10.0...v1.10.1) (2025-10-31)
+
+### Bug Fixes
+
+- 不输出 tailwindcss ([a919bd4](https://github.com/xing-lin/browseract-ui/commit/a919bd4292a8ae11f9af30ca62a5da1e5b217949))
+- 移除 tailwindcss 导出，去掉 layer ([496cfe8](https://github.com/xing-lin/browseract-ui/commit/496cfe80044d232e0246492bdc7ee8458d88edd4))
+
 # [1.10.0](https://github.com/xing-lin/browseract-ui/compare/v1.9.1...v1.10.0) (2025-10-31)
 
 ### Bug Fixes
