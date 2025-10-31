@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react-vite';
-import '../src/index.css';
+import './preview.css'; // Storybook 专用样式（包含 Tailwind CSS）
 
 const preview: Preview = {
   parameters: {
