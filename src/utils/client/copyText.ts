@@ -23,9 +23,9 @@ export interface CopyResult {
  * ```typescript
  * const result = await copyText('Hello World');
  * if (result.success) {
- *   console.log('复制成功');
+ *   console.log('Copy successful');
  * } else {
- *   console.error('复制失败', result.error);
+ *   console.error('Copy failed', result.error);
  * }
  * ```
  */
@@ -42,7 +42,9 @@ export async function copyText(text: string): Promise<CopyResult> {
       return fallbackCopy(text);
     }
 
-    throw new Error('当前环境不支持复制功能');
+    throw new Error(
+      'Copy functionality is not supported in current environment',
+    );
   } catch (error) {
     return {
       success: false,
@@ -89,7 +91,7 @@ function fallbackCopy(text: string): CopyResult {
     const successful = document.execCommand('copy');
 
     if (!successful) {
-      throw new Error('execCommand 执行失败');
+      throw new Error('execCommand failed to execute');
     }
 
     return { success: true };
