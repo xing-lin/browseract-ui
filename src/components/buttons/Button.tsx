@@ -2,9 +2,30 @@
 
 import { forwardRef } from 'react';
 import { IconLoading } from '../icons/solos/loading/IconLoading';
-import { cn } from '../../utils/cn';
+import { cn } from '@/utils/cn';
 import type { ButtonProps } from './button.types';
 import styles from './button.module.css';
+
+// 样式映射表
+const STYLE_MAP = {
+  type: {
+    default: styles['btn-default'],
+    primary: styles['btn-primary'],
+    dashed: styles['btn-dashed'],
+    text: styles['btn-text'],
+    link: styles['btn-link'],
+  },
+  size: {
+    small: styles['btn-size-small'],
+    middle: styles['btn-size-middle'],
+    large: styles['btn-size-large'],
+  },
+  shape: {
+    default: styles['btn-shape-default'],
+    round: styles['btn-shape-round'],
+    circle: styles['btn-shape-circle'],
+  },
+} as const;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -40,35 +61,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = cn(
       styles['btn-base'],
-      // type classes
-      {
-        [styles['btn-default']]: type === 'default',
-        [styles['btn-primary']]: type === 'primary',
-        [styles['btn-dashed']]: type === 'dashed',
-        [styles['btn-text']]: type === 'text',
-        [styles['btn-link']]: type === 'link',
-      },
-      // size classes
-      {
-        [styles['btn-size-small']]: size === 'small',
-        [styles['btn-size-middle']]: size === 'middle',
-        [styles['btn-size-large']]: size === 'large',
-      },
-      // shape classes (不适用于 text/link)
-      {
-        [styles['btn-shape-default']]: !isTextOrLink && shape === 'default',
-        [styles['btn-shape-round']]: !isTextOrLink && shape === 'round',
-        [styles['btn-shape-circle']]: !isTextOrLink && shape === 'circle',
-      },
-      // only icon classes
+      STYLE_MAP.type[type],
+      STYLE_MAP.size[size],
+      !isTextOrLink && STYLE_MAP.shape[shape],
       onlyIcon && styles['btn-only-icon'],
-      // danger classes
       danger && styles['btn-danger'],
-      // ghost classes (不适用于 text/link)
       ghost && !isTextOrLink && styles['btn-ghost'],
-      // block classes (不适用于 text/link)
       block && !isTextOrLink && styles['btn-block'],
-      // loading classes
       loading && styles['btn-loading'],
       className,
     );
