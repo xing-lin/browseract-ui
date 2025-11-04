@@ -1,3 +1,4 @@
+export { IconChain } from './icons/solos/chain/IconChain';
 export { IconClose } from './icons/solos/close/IconClose';
 export { IconCloseCircle } from './icons/solos/close/IconCloseCircle';
 export { IconCopy } from './icons/solos/copy/IconCopy';
@@ -24,6 +25,7 @@ export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconShare } from './icons/solos/share/IconShare';
 export { IconSpark } from './icons/solos/spark/IconSpark';
 export { IconSync } from './icons/solos/sync/IconSync';
+export { IconToolPreview } from './icons/solos/tool/IconToolPreview';
 export { IconWarning } from './icons/solos/warning/IconWarning';
 
 // decors
@@ -50,6 +52,10 @@ export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';
 // button
 export { Button } from './buttons/Button';
 export type { ButtonProps, ButtonType, ButtonSize, ButtonShape, ButtonIconPosition } from './buttons/button.types';
+
+// tabs
+export { Tabs } from './tabs/Tabs';
+export type { TabsProps } from './tabs/Tabs';
 
 // types
 export type { IconActiveProps } from './icons/types';

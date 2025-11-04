@@ -1,12 +1,1 @@
-/**
- * Storybook 预览样式
- * 这个文件只在 Storybook 开发环境中使用
- */
-
-/* 导入 Tailwind CSS - 开发预览需要 */
-@import 'tailwindcss';
-
-/* 导入组件库样式 */
-@import '../src/styles/variables.css';
-@import '../src/styles/animations.css';
-@import '../src/styles/utilities.css';
+@import '../src/index.css';
