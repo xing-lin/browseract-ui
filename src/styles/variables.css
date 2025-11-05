@@ -139,4 +139,10 @@
   /* ========== 动画 ========== */
   /* spinner 动画持续时长 */
   --animation-spinner-duration: 1s;
+
+  /* tabs */
+  --tabs-card-text-active: #18c566;
+  --tabs-card-bg: rgba(0, 0, 0, 0.02);
+  --tabs-card-bg-active: #ffffff;
+  --tabs-underline-border-active: #18c566;
 }
