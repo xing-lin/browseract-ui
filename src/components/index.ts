@@ -21,6 +21,7 @@ export { IconMcpConfig } from './icons/solos/mcp/IconMcpConfig';
 export { IconMinusCircle } from './icons/solos/minus/IconMinusCircle';
 export { IconPlus } from './icons/solos/plus/IconPlus';
 export { IconPlusCircle } from './icons/solos/plus/IconPlusCircle';
+export { IconQuestionCircle } from './icons/solos/question/IconQuestionCircle';
 export { IconRight } from './icons/solos/right/IconRight';
 export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconShare } from './icons/solos/share/IconShare';
