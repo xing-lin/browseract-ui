@@ -28,6 +28,7 @@ export { IconRight } from './icons/solos/right/IconRight';
 export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconShare } from './icons/solos/share/IconShare';
 export { IconSpark } from './icons/solos/spark/IconSpark';
+export { IconStar } from './icons/solos/star/IconStar';
 export { IconSync } from './icons/solos/sync/IconSync';
 export { IconToolPreview } from './icons/solos/tool/IconToolPreview';
 export { IconWarning } from './icons/solos/warning/IconWarning';
