@@ -27,6 +27,7 @@ export { IconPlusCircle } from './icons/solos/plus/IconPlusCircle';
 export { IconPowerOff } from './icons/solos/power/IconPowerOff';
 export { IconQuestionCircle } from './icons/solos/question/IconQuestionCircle';
 export { IconRight } from './icons/solos/right/IconRight';
+export { IconSearch } from './icons/solos/search/IconSearch';
 export { IconSetting } from './icons/solos/setting/IconSetting';
 export { IconShare } from './icons/solos/share/IconShare';
 export { IconSpark } from './icons/solos/spark/IconSpark';
