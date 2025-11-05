@@ -1,5 +1,6 @@
 export { IconApiAutomation } from './icons/solos/api/IconApiAutomation';
 export { IconChain } from './icons/solos/chain/IconChain';
+export { IconChainBreak } from './icons/solos/chain/IconChainBreak';
 export { IconClose } from './icons/solos/close/IconClose';
 export { IconCloseCircle } from './icons/solos/close/IconCloseCircle';
 export { IconCopy } from './icons/solos/copy/IconCopy';
