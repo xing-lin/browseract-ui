@@ -30,6 +30,7 @@ export const Default: Story = {
   args: {
     children: 'Tooltip',
     content: 'Tooltip content',
+    open: true,
   },
 };
 
@@ -38,5 +39,6 @@ export const LongContent: Story = {
     children: 'Tooltip',
     content:
       'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+    open: true,
   },
 };
