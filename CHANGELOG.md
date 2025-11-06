@@ -1,3 +1,32 @@
+# [1.11.0](https://github.com/xing-lin/browseract-ui/compare/v1.10.1...v1.11.0) (2025-11-06)
+
+### Bug Fixes
+
+- update IconStar viewBox ([572ce64](https://github.com/xing-lin/browseract-ui/commit/572ce6440566bd39e3a0d23481b7a1f7c0239a96))
+- 修改中文提示语为英语 ([515c8b0](https://github.com/xing-lin/browseract-ui/commit/515c8b0ef423fe29001b90822a260662824564c5))
+
+### Features
+
+- tabs 添加card跟 underline ([7f386d7](https://github.com/xing-lin/browseract-ui/commit/7f386d78844154322b7cd6cd5b504830172e22b3))
+- 添加 IconApiAutomation 图标 ([adb13ae](https://github.com/xing-lin/browseract-ui/commit/adb13ae1b47810f95ae525d9b0c3db6b8a63f4d7))
+- 添加 IconChain 和 IconToolPreview 图标 ([47bae40](https://github.com/xing-lin/browseract-ui/commit/47bae4039a07814b8c96279cbde68a9baec6b055))
+- 添加 IconChainBreak 图标 ([cad1d48](https://github.com/xing-lin/browseract-ui/commit/cad1d48e74e663d655ad214618af4cf38ba2a506))
+- 添加 IconDuoMcp 图标 ([cd467f7](https://github.com/xing-lin/browseract-ui/commit/cd467f7bf58d48e2627e788489d25480889f2690))
+- 添加 IconMcp ([b36bb97](https://github.com/xing-lin/browseract-ui/commit/b36bb97413131eabdee9915583074d9a1f785bc0))
+- 添加 IconMcpConfig 图标 ([47b04aa](https://github.com/xing-lin/browseract-ui/commit/47b04aa6ed274fb613757f4b73c64e5e3ccca627))
+- 添加 IconPowerOff 图标 ([20df562](https://github.com/xing-lin/browseract-ui/commit/20df56216700fc22775b9d55002e299bba58314b))
+- 添加 IconQuestionCircle 图标 ([2597914](https://github.com/xing-lin/browseract-ui/commit/2597914ef41bbd48a80a928c813297ad92c2b88a))
+- 添加 IconStar 图标 ([795ad9b](https://github.com/xing-lin/browseract-ui/commit/795ad9b4bb977ac0b97363eab6ed5b8a1f732a4d))
+- 添加 InputSearch 组件 ([85cb1d5](https://github.com/xing-lin/browseract-ui/commit/85cb1d57eea6f5bc76598223f48ecfc42b6d8348))
+- 添加 tabs 组件 ([5899684](https://github.com/xing-lin/browseract-ui/commit/5899684a8ceafc94b9e48de891577521262a9672))
+- 添加 Tooltip ([df80ef1](https://github.com/xing-lin/browseract-ui/commit/df80ef1c5344c117572f8e7b96233ef3b98dbad6))
+- 添加IconSearch 图标 ([ad695af](https://github.com/xing-lin/browseract-ui/commit/ad695afcd91299eaa3a77467c9eed28870811567))
+
+### Performance Improvements
+
+- button 抽取样式映射表 ([3c843e5](https://github.com/xing-lin/browseract-ui/commit/3c843e5b43d992b71e2a4ccbb4414a74021305b6))
+- 添加@的 alias ([987438a](https://github.com/xing-lin/browseract-ui/commit/987438a50696d5e8f347bf42dd8efe605ffd2589))
+
 ## [1.10.1](https://github.com/xing-lin/browseract-ui/compare/v1.10.0...v1.10.1) (2025-10-31)
 
 ### Bug Fixes
