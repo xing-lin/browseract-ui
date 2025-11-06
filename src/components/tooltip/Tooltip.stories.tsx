@@ -42,3 +42,20 @@ export const LongContent: Story = {
     open: true,
   },
 };
+
+export const WithReactNodes: Story = {
+  args: {
+    children: (
+      <button className="rounded bg-blue-500 px-4 py-2 text-white">
+        Custom Button
+      </button>
+    ),
+    content: (
+      <div className="flex flex-col gap-2">
+        <strong>Custom Content</strong>
+        <p>This is a custom React node as content</p>
+      </div>
+    ),
+    open: true,
+  },
+};
