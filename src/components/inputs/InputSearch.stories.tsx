@@ -9,7 +9,7 @@ const meta: Meta<typeof InputSearch> = {
     loading: {
       control: 'boolean',
     },
-    width: {
+    maxWidth: {
       control: 'number',
     },
   },
@@ -20,13 +20,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    width: 350,
+    maxWidth: 350,
   },
 };
 
 export const Loading: Story = {
   args: {
-    width: 350,
+    maxWidth: 350,
     loading: true,
   },
 };
