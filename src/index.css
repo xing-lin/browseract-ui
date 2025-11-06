@@ -121,7 +121,7 @@
     @apply bg-background text-foreground;
   } */
   button {
-    @apply cursor-pointer;
+    cursor: pointer;
   }
 
   input[type='search']::-webkit-search-cancel-button {

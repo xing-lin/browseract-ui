@@ -149,4 +149,8 @@
   /* input */
   --input-search-bg: #f4f4f4;
   --input-search-border: #f4f4f4;
+
+  /* tooltip */
+  --tooltip-bg: rgba(0, 0, 0, 0.85);
+  --tooltip-text: #ffffff;
 }

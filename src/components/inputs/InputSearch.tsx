@@ -10,14 +10,14 @@ import { IconLoading } from '../icons/solos/loading/IconLoading';
 
 interface InputSearchProps extends InputHTMLAttributes<HTMLInputElement> {
   wrapperClassName?: string;
-  width?: number | string;
+  maxWidth?: number | string;
   loading?: boolean;
 }
 
 export function InputSearch({
   wrapperClassName,
   className,
-  width,
+  maxWidth,
   placeholder = 'Search',
   loading = false,
   disabled,
@@ -29,7 +29,7 @@ export function InputSearch({
         'h-8 rounded-lg border-(--input-search-border) bg-(--input-search-bg)',
         wrapperClassName,
       )}
-      style={{ maxWidth: width }}
+      style={{ maxWidth }}
     >
       <InputGroupAddonUI className="text-(--color-text-quaternary)">
         <IconSearch />
