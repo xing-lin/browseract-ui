@@ -43,6 +43,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconPosition = 'start',
       block = false,
       className,
+      htmlType = 'button',
       ...props
     },
     ref,
@@ -77,7 +78,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        type="button"
+        type={htmlType}
         className={classes}
         disabled={disabled}
         onClick={handleClick}

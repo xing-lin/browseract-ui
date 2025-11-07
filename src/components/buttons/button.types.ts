@@ -53,4 +53,8 @@ export interface ButtonProps
    * 按钮宽度
    */
   block?: boolean;
+  /**
+   * 按钮 HTML 类型
+   */
+  htmlType?: 'button' | 'submit' | 'reset';
 }
