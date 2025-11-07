@@ -1,17 +1,25 @@
 export { IconApiAutomation } from './icons/solos/api/IconApiAutomation';
 export { IconChain } from './icons/solos/chain/IconChain';
 export { IconChainBreak } from './icons/solos/chain/IconChainBreak';
+export { IconCheck } from './icons/solos/check/IconCheck';
+export { IconCheckCircle } from './icons/solos/check/IconCheckCircle';
+export { IconCheckCircleFilled } from './icons/solos/check/IconCheckCircleFilled';
 export { IconClose } from './icons/solos/close/IconClose';
 export { IconCloseCircle } from './icons/solos/close/IconCloseCircle';
+export { IconCloseCircleFilled } from './icons/solos/close/IconCloseCircleFilled';
 export { IconCopy } from './icons/solos/copy/IconCopy';
 export { IconDelete } from './icons/solos/delete/IconDelete';
 export { IconDislike } from './icons/solos/dislike/IconDislike';
 export { IconEdit } from './icons/solos/edit/IconEdit';
 export { IconEditBlock } from './icons/solos/edit/IconEditBlock';
-export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
 export { IconEllipsis } from './icons/solos/ellipsis/IconEllipsis';
+export { IconExclamationCircle } from './icons/solos/exclamation/IconExclamationCircle';
+export { IconExclamationCircleFilled } from './icons/solos/exclamation/IconExclamationCircleFilled';
 export { IconExpand } from './icons/solos/expand/IconExpand';
+export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
 export { IconGuideBook } from './icons/solos/guide-book/IconGuideBook';
+export { IconInfoCircle } from './icons/solos/info/IconInfoCircle';
+export { IconInfoCircleFilled } from './icons/solos/info/IconInfoCircleFilled';
 export { IconInternalLink } from './icons/solos/internal-link/IconInternalLink';
 export { IconKeyIdentity } from './icons/solos/key/IconKeyIdentity';
 export { IconKeyIdentityGrant } from './icons/solos/key/IconKeyIdentityGrant';
@@ -35,6 +43,7 @@ export { IconStar } from './icons/solos/star/IconStar';
 export { IconSync } from './icons/solos/sync/IconSync';
 export { IconToolPreview } from './icons/solos/tool/IconToolPreview';
 export { IconWarning } from './icons/solos/warning/IconWarning';
+export { IconWarningFilled } from './icons/solos/warning/IconWarningFilled';
 
 // decors
 export { IconDecorApiAgent } from './icons/decors/api/IconDecorApiAgent';
@@ -65,6 +74,18 @@ export type { ButtonProps, ButtonType, ButtonSize, ButtonShape, ButtonIconPositi
 // tabs
 export { Tabs } from './tabs/Tabs';
 export type { TabsProps } from './tabs/Tabs';
+
+// dialog
+export { Dialog } from './dialog/Dialog';
+export type { DialogProps } from './dialog/Dialog';
+
+// tooltip
+export { Tooltip } from './tooltip/Tooltip';
+export type { TooltipProps } from './tooltip/Tooltip';
+
+// status icons
+export { StatusIcon } from './status/StatusIcon';
+export type { StatusIconProps, StatusIconType } from './status/StatusIcon';
 
 // types
 export type { IconActiveProps } from './icons/types';

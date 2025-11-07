@@ -120,6 +120,11 @@
   body {
     @apply bg-background text-foreground;
   } */
+
+  * {
+    scrollbar-width: thin;
+  }
+
   button {
     cursor: pointer;
   }
