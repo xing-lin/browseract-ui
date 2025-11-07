@@ -62,16 +62,16 @@
   --color-error-text-active: #d9363e;
 
   /* 信息色 */
-  --color-info: #1dde74;
-  --color-info-bg: #f0fef5;
-  --color-info-bg-hover: #d9fceb;
-  --color-info-border: #a5f3c9;
-  --color-info-border-hover: #71e9a7;
-  --color-info-hover: #4fe58a;
-  --color-info-active: #16b85c;
-  --color-info-text-hover: #4fe58a;
-  --color-info-text: #1dde74;
-  --color-info-text-active: #16b85c;
+  --color-info: #1677ff;
+  --color-info-bg: #e6f4ff;
+  --color-info-bg-hover: #bae0ff;
+  --color-info-border: #91caff;
+  --color-info-border-hover: #69b1ff;
+  --color-info-hover: #69b1ff;
+  --color-info-active: #0958d9;
+  --color-info-text-hover: #4096ff;
+  --color-info-text: #1677ff;
+  --color-info-text-active: #0958d9;
 
   /* 链接色 */
   --color-link: #1677ff;
@@ -153,4 +153,7 @@
   /* tooltip */
   --tooltip-bg: rgba(0, 0, 0, 0.85);
   --tooltip-text: #ffffff;
+
+  /* dialog */
+  --dialog-content-bg: #ffffff;
 }
