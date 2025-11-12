@@ -1,3 +1,22 @@
+# [1.12.0](https://github.com/xing-lin/browseract-ui/compare/v1.11.0...v1.12.0) (2025-11-12)
+
+### Features
+
+- 添加 AlertDialog 组件 ([962c5e2](https://github.com/xing-lin/browseract-ui/commit/962c5e23834607b46d0f25b14774bb4b9a436175))
+- 添加 Dialog 组件 ([08fc495](https://github.com/xing-lin/browseract-ui/commit/08fc4957c3dab2502ddb2cddb4009a42392a60ca))
+- 添加 IconCheck 图标 ([85d9632](https://github.com/xing-lin/browseract-ui/commit/85d9632f04fc71e81ebedefce7f2a3b8097911f8))
+- 添加 IconCheckCircle 图标 ([96c9c6c](https://github.com/xing-lin/browseract-ui/commit/96c9c6c97cd7444847e1985bddf6aca9bf45f88c))
+- 添加 IconCheckCircleFilled 图标 ([c8adee9](https://github.com/xing-lin/browseract-ui/commit/c8adee93e924e3a51046e4b1a48ca93f697c8f81))
+- 添加 IconCloseCircleFilled 图标 ([abbdadd](https://github.com/xing-lin/browseract-ui/commit/abbdadd912a059d46c236eea73ff75ab389aad6d))
+- 添加 IconExclamationCircleFilled 图标 ([1b3cf5b](https://github.com/xing-lin/browseract-ui/commit/1b3cf5b9ceee180410fd94fed375b4934c4587a8))
+- 添加 IconInfoCircle 图标 ([2e68810](https://github.com/xing-lin/browseract-ui/commit/2e68810afd21b7f5329c7b9719c28232d1ae17b6))
+- 添加 IconInfoCircleFilled 图标 ([1ec6d43](https://github.com/xing-lin/browseract-ui/commit/1ec6d43f95f7681c9b10557f30efb8f4f3b29854))
+- 添加 IconNodeDuplicate 图标 ([0377dda](https://github.com/xing-lin/browseract-ui/commit/0377ddab5268b93129216aff4418868d932dd93f))
+- 添加 IconWarningFilled 图标 ([eb48580](https://github.com/xing-lin/browseract-ui/commit/eb4858080fce5edada63ab77fffb9b007a8e0582))
+- 添加 StatusIcon 组件 ([639e8d1](https://github.com/xing-lin/browseract-ui/commit/639e8d17accda9e7f2e1caa737c4de9342ede0b4))
+- 添加button htmltype类型 ([f48aeaa](https://github.com/xing-lin/browseract-ui/commit/f48aeaae6efd3e706d68f5001e39d7f252081766))
+- 添加IconExclamationCircle 图标 ([33f48fd](https://github.com/xing-lin/browseract-ui/commit/33f48fd299f92fbb169b47e2e0c3a3d2f4324d39))
+
 # [1.11.0](https://github.com/xing-lin/browseract-ui/compare/v1.10.1...v1.11.0) (2025-11-06)
 
 ### Bug Fixes
