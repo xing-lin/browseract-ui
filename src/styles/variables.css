@@ -156,4 +156,20 @@
 
   /* dialog */
   --dialog-content-bg: #ffffff;
+
+  /* checkbox */
+  /* 选中状态 */
+  --checkbox-text-checked: var(--color-primary);
+  --checkbox-bg-checked: var(--color-secondary);
+  --checkbox-border-checked: var(--color-secondary);
+
+  /* 禁用状态 */
+  --checkbox-bg-disabled: var(--color-bg-disabled);
+  --checkbox-border-disabled: var(--color-border-disabled);
+  --checkbox-text-disabled: var(--color-text-disabled);
+
+  /* 禁用且选中状态 */
+  --checkbox-bg-disabled-checked: var(--color-bg-disabled);
+  --checkbox-border-disabled-checked: var(--color-border-disabled);
+  --checkbox-text-disabled-checked: var(--color-text-disabled);
 }

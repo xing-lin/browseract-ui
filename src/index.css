@@ -154,4 +154,6 @@
 @theme inline {
   --color-ring: var(--color-primary);
   --color-destructive: var(--color-error);
+  --color-border: var(--color-border);
+  --color-input: var(--color-border);
 }

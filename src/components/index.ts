@@ -72,6 +72,10 @@ export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';
 export { Button } from './buttons/Button';
 export type { ButtonProps, ButtonType, ButtonSize, ButtonShape, ButtonIconPosition } from './buttons/button.types';
 
+// checkbox
+export { Checkbox } from './checkbox/Checkbox';
+export type { CheckboxProps } from './checkbox/Checkbox';
+
 // tabs
 export { Tabs } from './tabs/Tabs';
 export type { TabsProps } from './tabs/Tabs';
