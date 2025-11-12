@@ -79,6 +79,10 @@ export type { TabsProps } from './tabs/Tabs';
 export { Dialog } from './dialog/Dialog';
 export type { DialogProps } from './dialog/Dialog';
 
+// alert dialog
+export { AlertDialog } from './alert-dialog/AlertDialog';
+export type { AlertDialogProps } from './alert-dialog/AlertDialog';
+
 // tooltip
 export { Tooltip } from './tooltip/Tooltip';
 export type { TooltipProps } from './tooltip/Tooltip';

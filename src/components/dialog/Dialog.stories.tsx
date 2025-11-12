@@ -97,3 +97,39 @@ export const StatusSuccess: Story = {
     status: 'success',
   },
 };
+
+export const OnlyConfirmButton: Story = {
+  args: {
+    trigger: (
+      <button className="bg-primary rounded px-4 py-2 text-black">
+        Open Dialog
+      </button>
+    ),
+    title: 'Notification',
+    description: 'This dialog only has a confirm button.',
+    children: 'Please confirm to continue.',
+    onlyConfirmButton: true,
+    confirmButtonProps: {
+      type: 'primary',
+      children: 'OK',
+    },
+  },
+};
+
+export const NoHeaderDialog: Story = {
+  args: {
+    trigger: (
+      <button className="bg-primary rounded px-4 py-2 text-black">
+        Open Simple Dialog
+      </button>
+    ),
+    // 没有 title 和 description，用于覆盖 BaseDialog.tsx line 207
+    children: (
+      <div>
+        <p className="mb-4 text-base font-semibold">Content Only Dialog</p>
+        <p>This dialog has no title or description in the header.</p>
+        <p>All content is in the body section.</p>
+      </div>
+    ),
+  },
+};
