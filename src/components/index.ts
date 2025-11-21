@@ -31,6 +31,7 @@ export { IconMcp } from './icons/solos/mcp/IconMcp';
 export { IconMcpConfig } from './icons/solos/mcp/IconMcpConfig';
 export { IconMinusCircle } from './icons/solos/minus/IconMinusCircle';
 export { IconNodeDuplicate } from './icons/solos/nodes/IconNodeDuplicate';
+export { IconPlane } from './icons/solos/plane/IconPlane';
 export { IconPlus } from './icons/solos/plus/IconPlus';
 export { IconPlusCircle } from './icons/solos/plus/IconPlusCircle';
 export { IconPowerOff } from './icons/solos/power/IconPowerOff';
