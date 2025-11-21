@@ -1,3 +1,12 @@
+# [1.13.0](https://github.com/xing-lin/browseract-ui/compare/v1.12.0...v1.13.0) (2025-11-21)
+
+### Features
+
+- 添加 IconDocumentPreview 组件 ([27f542a](https://github.com/xing-lin/browseract-ui/commit/27f542af4ebd3445330cc6e587665350a19b3541))
+- 添加 IconDuoPalette 图标 ([5e8a9ca](https://github.com/xing-lin/browseract-ui/commit/5e8a9ca3e1e0888b45e083933c86ad23a6d11fb0))
+- 添加 IconHourglass 图标 ([12e5dc9](https://github.com/xing-lin/browseract-ui/commit/12e5dc9e534ac08ada345447fd4629c2f11bb610))
+- 添加 IconPlane 组件 ([9bc875e](https://github.com/xing-lin/browseract-ui/commit/9bc875eaef748b1d466dc5600d47a0e508f68646))
+
 # [1.12.0](https://github.com/xing-lin/browseract-ui/compare/v1.11.0...v1.12.0) (2025-11-12)
 
 ### Features
