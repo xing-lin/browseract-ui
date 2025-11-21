@@ -67,6 +67,7 @@ export { IconDuoLog } from './icons/duos/log/IconDuoLog';
 export { IconDuoMcp } from './icons/duos/mcp/IconDuoMcp';
 export { IconDuoMirrorImage } from './icons/duos/mirror-image/IconDuoMirrorImage';
 export { IconDuoPalette } from './icons/duos/palette/IconDuoPalette';
+export { IconDuoPlan } from './icons/duos/plan/IconDuoPlan';
 export { IconDuoPlay } from './icons/duos/play/IconDuoPlay';
 export { IconDuoTemplate } from './icons/duos/template/IconDuoTemplate';
 export { IconDuoWorkflow } from './icons/duos/workflow/IconDuoWorkflow';
