@@ -1,3 +1,9 @@
+## [1.13.1](https://github.com/xing-lin/browseract-ui/compare/v1.13.0...v1.13.1) (2025-11-21)
+
+### Bug Fixes
+
+- 修复 IconDuoPlan 导出 ([d6b3117](https://github.com/xing-lin/browseract-ui/commit/d6b3117586928a3811db73bdde349cf01fcee578))
+
 # [1.13.0](https://github.com/xing-lin/browseract-ui/compare/v1.12.0...v1.13.0) (2025-11-21)
 
 ### Features
