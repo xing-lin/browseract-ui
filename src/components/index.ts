@@ -18,6 +18,7 @@ export { IconExclamationCircleFilled } from './icons/solos/exclamation/IconExcla
 export { IconExpand } from './icons/solos/expand/IconExpand';
 export { IconExternalLink } from './icons/solos/external-link/IconExternalLink';
 export { IconGuideBook } from './icons/solos/guide-book/IconGuideBook';
+export { IconHourglass } from './icons/solos/hourglass/IconHourglass';
 export { IconInfoCircle } from './icons/solos/info/IconInfoCircle';
 export { IconInfoCircleFilled } from './icons/solos/info/IconInfoCircleFilled';
 export { IconInternalLink } from './icons/solos/internal-link/IconInternalLink';
