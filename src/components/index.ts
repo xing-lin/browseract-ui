@@ -9,6 +9,7 @@ export { IconCloseCircle } from './icons/solos/close/IconCloseCircle';
 export { IconCloseCircleFilled } from './icons/solos/close/IconCloseCircleFilled';
 export { IconCopy } from './icons/solos/copy/IconCopy';
 export { IconDelete } from './icons/solos/delete/IconDelete';
+export { IconDocumentPreview } from './icons/solos/document/IconDocumentPreview';
 export { IconDislike } from './icons/solos/dislike/IconDislike';
 export { IconEdit } from './icons/solos/edit/IconEdit';
 export { IconEditBlock } from './icons/solos/edit/IconEditBlock';
