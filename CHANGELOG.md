@@ -1,3 +1,9 @@
+## [1.14.1](https://github.com/xing-lin/browseract-ui/compare/v1.14.0...v1.14.1) (2025-11-21)
+
+### Bug Fixes
+
+- 调整打包的样式问题 ([23d3ec2](https://github.com/xing-lin/browseract-ui/commit/23d3ec21906bc2f36cf7bba7d7f984da6a797e3a))
+
 # [1.14.0](https://github.com/xing-lin/browseract-ui/compare/v1.13.1...v1.14.0) (2025-11-21)
 
 ### Features
