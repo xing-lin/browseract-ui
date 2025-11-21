@@ -2,6 +2,7 @@ export { IconApiAutomation } from './icons/solos/api/IconApiAutomation';
 export { IconChain } from './icons/solos/chain/IconChain';
 export { IconChainBreak } from './icons/solos/chain/IconChainBreak';
 export { IconCheck } from './icons/solos/check/IconCheck';
+export { IconCheckBadge } from './icons/solos/check/IconCheckBadge';
 export { IconCheckCircle } from './icons/solos/check/IconCheckCircle';
 export { IconCheckCircleFilled } from './icons/solos/check/IconCheckCircleFilled';
 export { IconClose } from './icons/solos/close/IconClose';
