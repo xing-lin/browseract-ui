@@ -1,3 +1,5 @@
+@import './styles/variables.css';
+
 @import 'tailwindcss';
 
 @import 'tw-animate-css';
@@ -147,11 +149,69 @@
   }
 }
 
-@import './styles/variables.css';
-@import './styles/animations.css';
-@import './styles/utilities.css';
-
 @theme inline {
   --color-ring: var(--color-primary);
   --color-destructive: var(--color-error);
+}
+
+/* 自定义动画和工具类 */
+@layer utilities {
+  /* 旋转动画，用于 loading 旋转图标 */
+  ._spinner {
+    /*  name | duration | easing-function | iteration-count */
+    animation: _spinner var(--animation-spinner-duration) linear infinite;
+    /* 以中心旋转 */
+    transform-origin: center;
+  }
+
+  /* 双色图标，默认单色，悬浮时变双色 */
+  ._icon-hover-duo-color:hover
+    [data-hover='green']:not([data-render='stroke']) {
+    fill: var(--icon-fill-active-green);
+  }
+
+  ._icon-hover-duo-color:hover
+    [data-hover='black']:not([data-render='stroke']) {
+    fill: var(--icon-fill-active-black);
+  }
+
+  ._icon-hover-duo-color:hover [data-hover='green'][data-render='stroke'] {
+    stroke: var(--icon-fill-active-green);
+  }
+
+  ._icon-hover-duo-color:hover [data-hover='black'][data-render='stroke'] {
+    stroke: var(--icon-fill-active-black);
+  }
+
+  /* 覆盖 tailwind 的文本大小 */
+  ._text-xs {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+  }
+
+  ._text-sm {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+  }
+
+  ._text-base {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  ._text-lg {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+  }
+
+  ._text-xl {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+  }
+}
+
+@keyframes _spinner {
+  100% {
+    transform: rotate(360deg);
+  }
 }
