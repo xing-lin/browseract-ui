@@ -1,3 +1,9 @@
+# [1.14.0](https://github.com/xing-lin/browseract-ui/compare/v1.13.1...v1.14.0) (2025-11-21)
+
+### Features
+
+- 添加 IconCheckBadge 图标 ([4ebc23a](https://github.com/xing-lin/browseract-ui/commit/4ebc23a68c3c6f31cbefaba0e11eb64e28a0d0b3))
+
 ## [1.13.1](https://github.com/xing-lin/browseract-ui/compare/v1.13.0...v1.13.1) (2025-11-21)
 
 ### Bug Fixes
