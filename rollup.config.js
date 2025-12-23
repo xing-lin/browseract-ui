@@ -32,38 +32,23 @@ export default [
   // 主入口
   {
     input: 'src/index.ts',
-    output: [
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
-        file: packageJson.module,
-        format: 'esm',
-        sourcemap: true,
-      },
-    ],
+    output: {
+      file: packageJson.module,
+      format: 'esm',
+      sourcemap: true,
+    },
     plugins: [...commonPluginsWithTerser, postcssPlugin],
     external: ['react', 'react-dom'],
   },
-  // 客户端工具入口（如果需要）
+  // 客户端工具入口
   {
     input: 'src/utils/client/index.ts',
-    output: [
-      {
-        file: 'dist/utils/client.js',
-        format: 'cjs',
-        sourcemap: true,
-        banner: "'use client';",
-      },
-      {
-        file: 'dist/utils/client.mjs',
-        format: 'esm',
-        sourcemap: true,
-        banner: "'use client';",
-      },
-    ],
+    output: {
+      file: 'dist/utils/client.mjs',
+      format: 'esm',
+      sourcemap: true,
+      banner: "'use client';",
+    },
     plugins: [
       ...commonPlugins,
       terser({
