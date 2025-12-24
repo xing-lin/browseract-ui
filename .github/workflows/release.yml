@@ -65,6 +65,7 @@ jobs:
       - name: Run semantic-release (determine version, tag, update package.json, publish to npm)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
         run: npx semantic-release
 
       - name: Fetch latest main (get semantic-release's commits / updated package.json & tags)
