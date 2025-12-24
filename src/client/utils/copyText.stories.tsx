@@ -49,24 +49,24 @@ function BasicUsageDemo() {
 
   return (
     <div className="space-y-4">
-      <div className="flex gap-3 flex-wrap">
+      <div className="flex flex-wrap gap-3">
         <button
           onClick={() => handleCopy('Hello, World!')}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
         >
           复制 "Hello, World!"
         </button>
 
         <button
           onClick={() => handleCopy('这是中文文本 👋')}
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+          className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600"
         >
           复制中文文本
         </button>
 
         <button
           onClick={() => handleCopy('https://www.browseract.com')}
-          className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
+          className="rounded bg-purple-500 px-4 py-2 text-white hover:bg-purple-600"
         >
           复制链接
         </button>
@@ -74,10 +74,10 @@ function BasicUsageDemo() {
 
       {result && (
         <div
-          className={`p-4 rounded ${
+          className={`rounded p-4 ${
             result.success
-              ? 'bg-green-50 border border-green-200 text-green-800'
-              : 'bg-red-50 border border-red-200 text-red-800'
+              ? 'border border-green-200 bg-green-50 text-green-800'
+              : 'border border-red-200 bg-red-50 text-red-800'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -92,10 +92,10 @@ function BasicUsageDemo() {
         </div>
       )}
 
-      <div className="mt-6 p-4 bg-gray-50 rounded">
-        <h4 className="font-semibold mb-2">代码示例：</h4>
-        <pre className="text-sm overflow-x-auto">
-          <code>{`import { copyText } from 'browseract-ui/utils/client';
+      <div className="mt-6 rounded bg-gray-50 p-4">
+        <h4 className="mb-2 font-semibold">代码示例：</h4>
+        <pre className="overflow-x-auto text-sm">
+          <code>{`import { copyText } from 'browseract-ui/client';
 
 const result = await copyText('Hello, World!');
 
@@ -133,30 +133,30 @@ function CustomTextDemo() {
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-sm font-medium mb-2">
+        <label className="mb-2 block text-sm font-medium">
           输入要复制的文本：
         </label>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="w-full min-h-[100px] p-3 border rounded resize-vertical"
+          className="resize-vertical min-h-[100px] w-full rounded border p-3"
           placeholder="输入任意文本..."
         />
       </div>
 
       <button
         onClick={handleCopy}
-        className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+        className="rounded bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-600"
       >
         复制文本
       </button>
 
       {result && (
         <div
-          className={`p-4 rounded ${
+          className={`rounded p-4 ${
             result.success
-              ? 'bg-green-50 border border-green-200 text-green-800'
-              : 'bg-red-50 border border-red-200 text-red-800'
+              ? 'border border-green-200 bg-green-50 text-green-800'
+              : 'border border-red-200 bg-red-50 text-red-800'
           }`}
         >
           {result.success
@@ -193,7 +193,7 @@ function RealWorldExampleDemo() {
   const codeExample = `'use client';
 
 import { useState } from 'react';
-import { copyText } from 'browseract-ui/utils/client';
+import { copyText } from 'browseract-ui/client';
 
 export function ShareButton({ url }: { url: string }) {
   const [copied, setCopied] = useState(false);
@@ -220,12 +220,12 @@ export function ShareButton({ url }: { url: string }) {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-semibold mb-3">ShareButton 组件</h3>
-        <div className="p-6 bg-gray-50 rounded border">
-          <p className="text-sm text-gray-600 mb-4">链接: {shareUrl}</p>
+        <h3 className="mb-3 text-lg font-semibold">ShareButton 组件</h3>
+        <div className="rounded border bg-gray-50 p-6">
+          <p className="mb-4 text-sm text-gray-600">链接: {shareUrl}</p>
           <button
             onClick={handleShare}
-            className={`px-6 py-3 rounded font-medium transition-colors ${
+            className={`rounded px-6 py-3 font-medium transition-colors ${
               copied
                 ? 'bg-green-500 text-white'
                 : 'bg-blue-500 text-white hover:bg-blue-600'
@@ -237,8 +237,8 @@ export function ShareButton({ url }: { url: string }) {
       </div>
 
       <div>
-        <h4 className="font-semibold mb-2">完整代码：</h4>
-        <pre className="bg-gray-900 text-gray-100 p-4 rounded overflow-x-auto text-sm">
+        <h4 className="mb-2 font-semibold">完整代码：</h4>
+        <pre className="overflow-x-auto rounded bg-gray-900 p-4 text-sm text-gray-100">
           <code>{codeExample}</code>
         </pre>
       </div>
@@ -262,7 +262,7 @@ export const APIReference: Story = {
   render: () => (
     <div className="prose prose-sm max-w-none">
       <h3>函数签名</h3>
-      <pre className="bg-gray-100 p-3 rounded">
+      <pre className="rounded bg-gray-100 p-3">
         <code>{`async function copyText(text: string): Promise<CopyResult>`}</code>
       </pre>
 
@@ -288,7 +288,7 @@ export const APIReference: Story = {
       <p>
         <code>Promise&lt;CopyResult&gt;</code>
       </p>
-      <pre className="bg-gray-100 p-3 rounded">
+      <pre className="rounded bg-gray-100 p-3">
         <code>{`interface CopyResult {
   success: boolean;  // 是否成功
   error?: Error;     // 错误信息（失败时）
@@ -296,7 +296,7 @@ export const APIReference: Story = {
       </pre>
 
       <h3 className="mt-4">浏览器兼容性</h3>
-      <div className="bg-blue-50 border border-blue-200 p-4 rounded">
+      <div className="rounded border border-blue-200 bg-blue-50 p-4">
         <p>
           <strong>现代浏览器（Clipboard API）:</strong>
         </p>
@@ -317,7 +317,7 @@ export const APIReference: Story = {
       </div>
 
       <h3 className="mt-4">注意事项</h3>
-      <div className="bg-yellow-50 border border-yellow-200 p-4 rounded">
+      <div className="rounded border border-yellow-200 bg-yellow-50 p-4">
         <ul>
           <li>
             ⚠️ <strong>HTTPS:</strong> Clipboard API 只在 HTTPS 或 localhost

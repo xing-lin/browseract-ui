@@ -1,4 +1,4 @@
-import { baseIconConfigs } from '@/components/icons/constants';
+import { baseIconConfigs } from '../../constants';
 
 export function IconChain(props: React.SVGProps<SVGSVGElement>) {
   return (

@@ -40,11 +40,11 @@ export default [
     plugins: [...commonPluginsWithTerser, postcssPlugin],
     external: ['react', 'react-dom'],
   },
-  // 客户端工具入口
+  // 客户端入口
   {
-    input: 'src/utils/client/index.ts',
+    input: 'src/client/index.ts',
     output: {
-      file: 'dist/utils/client.mjs',
+      file: 'dist/client/index.mjs',
       format: 'esm',
       sourcemap: true,
       banner: "'use client';",
@@ -67,10 +67,11 @@ export default [
     plugins: [dts.default()],
     external: [/\.css$/],
   },
-  // 类型定义 - 客户端工具
+  // 类型定义 - 客户端入口
   {
-    input: 'src/utils/client/index.ts',
-    output: [{ file: 'dist/utils/client.d.ts' }],
+    input: 'src/client/index.ts',
+    output: [{ file: 'dist/client/index.d.ts' }],
     plugins: [dts.default()],
+    external: [/\.css$/],
   },
 ];

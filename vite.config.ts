@@ -68,7 +68,7 @@ export default defineConfig({
         'src/**/*.types.ts',
         'src/**/types.ts',
         'playground/**', // 排除 playground 开发测试文件
-        'src/components/ui/**', // 排除 shadcn/ui 组件
+        'src/_shadcn/**', // 排除 shadcn/ui 组件
       ],
       reporter: ['text', 'lcov', 'html', 'clover', 'json'],
     },

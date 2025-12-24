@@ -1,6 +1,6 @@
 /**
  * 复制相关工具函数
- * @module utils/client/copy
+ * @module client/utils/copy
  */
 
 /**

@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/react-vite/*';
-import { SVGProps } from 'react';
+import type { Meta } from '@storybook/react-vite';
+import type { SVGProps } from 'react';
 
 export const baseIconConfigs: SVGProps<SVGSVGElement> = Object.freeze({
   xmlns: 'http://www.w3.org/2000/svg',
