@@ -1,0 +1,190 @@
+import {
+  Meta,
+  Source,
+  ColorPalette,
+  ColorItem,
+} from '@storybook/addon-docs/blocks';
+import ThemeCSS from '../src/theme.css?raw';
+
+<Meta title="设计/主题系统" />
+
+# 主题系统
+
+BrowserAct UI 基于 Tailwind CSS v4 和 CSS 变量构建，提供灵活的主题定制能力。
+
+## 📦 安装配置
+
+### 1. 导入主题样式
+
+在你的 Next.js 项目的全局 CSS 文件（如 `app/globals.css`）中导入：
+
+```css
+@import 'tailwindcss';
+@import 'tw-animate-css'; /* 可选：如果需要动画支持 */
+@import 'browseract-ui/theme.css';
+```
+
+### 2. 配置暗色模式
+
+主题默认支持暗色模式，通过 `.dark` 类名切换：
+
+```tsx
+// 在根元素上添加 dark 类
+<html className={isDark ? 'dark' : ''}>
+  <body>{children}</body>
+</html>
+```
+
+## 🎨 主题变量
+
+### 基础颜色
+
+主题使用 OKLCH 色彩空间，提供更好的色彩感知和过渡效果。
+
+#### 背景与前景色
+
+- `--background`: 页面背景色
+- `--foreground`: 主要文本色（88% 不透明度）
+- `--foreground-2`: 次要文本色（65% 不透明度）
+- `--foreground-3`: 三级文本色（45% 不透明度）
+- `--foreground-4`: 四级文本色（25% 不透明度）
+
+#### 语义颜色
+
+- `--primary` / `--primary-foreground`: 主色调
+- `--secondary` / `--secondary-foreground`: 次要色
+- `--muted` / `--muted-foreground`: 柔和色
+- `--accent` / `--accent-foreground`: 强调色
+- `--destructive`: 危险/删除操作色
+
+#### 功能颜色
+
+- `--link`: 链接色（默认：#1677ff）
+- `--border`: 边框色
+- `--divider`: 分割线色
+- `--input`: 输入框边框色
+- `--ring`: 聚焦环色
+
+#### 填充色
+
+用于背景、卡片等元素的半透明填充：
+
+- `--fill-1`: 15% 不透明度
+- `--fill-2`: 6% 不透明度
+- `--fill-3`: 4% 不透明度
+- `--fill-4`: 2% 不透明度
+
+### 圆角
+
+主题提供基于 `--radius` 的响应式圆角系统：
+
+- `--radius-sm`: 减 4px
+- `--radius-md`: 减 2px
+- `--radius-lg`: 基准值（默认 0.625rem）
+- `--radius-xl`: 加 4px
+- `--radius-2xl`: 加 8px
+- `--radius-3xl`: 加 12px
+- `--radius-4xl`: 加 16px
+
+### 图表颜色
+
+- `--chart-1` 到 `--chart-5`: 预设的图表配色方案
+
+### 侧边栏
+
+- `--sidebar`: 侧边栏背景
+- `--sidebar-foreground`: 侧边栏文本
+- `--sidebar-primary` / `--sidebar-primary-foreground`: 侧边栏主要按钮
+- `--sidebar-accent` / `--sidebar-accent-foreground`: 侧边栏强调
+- `--sidebar-border`: 侧边栏边框
+- `--sidebar-ring`: 侧边栏聚焦环
+
+## 🛠️ 自定义主题
+
+### 方法一：覆盖 CSS 变量
+
+在你的全局 CSS 中覆盖变量值：
+
+```css
+:root {
+  /* 修改基础圆角 */
+  --radius: 0.5rem;
+
+  /* 修改主色调 */
+  --primary: oklch(0.6 0.25 250);
+  --primary-foreground: oklch(1 0 0);
+
+  /* 修改链接色 */
+  --link: oklch(0.55 0.25 260);
+}
+
+.dark {
+  /* 暗色模式下的自定义 */
+  --primary: oklch(0.8 0.2 250);
+}
+```
+
+### 方法二：使用 Tailwind 工具类
+
+所有颜色变量都映射到了 Tailwind 的颜色系统：
+
+```tsx
+<div className="bg-primary text-primary-foreground">
+  主色调背景
+</div>
+
+<div className="bg-fill-1 text-foreground-2">
+  半透明背景 + 次要文本
+</div>
+
+<button className="rounded-lg border-border hover:bg-accent">
+  使用主题变量的按钮
+</button>
+```
+
+## 📝 完整主题代码
+
+<Source
+  language="css"
+  code={ThemeCSS}
+  dark
+/>
+
+## 💡 最佳实践
+
+1. **使用语义化变量**：优先使用 `--primary`、`--muted` 等语义化变量，而不是直接使用具体颜色值
+2. **保持一致性**：在整个应用中统一使用主题变量，避免硬编码颜色
+3. **测试暗色模式**：确保自定义颜色在亮/暗模式下都有良好的对比度
+4. **使用 OKLCH**：自定义颜色时推荐使用 OKLCH 格式，获得更好的色彩过渡效果
+
+## 🎯 示例：创建自定义主题
+
+```css
+/* app/globals.css */
+@import 'tailwindcss';
+@import 'browseract-ui/theme.css';
+
+/* 自定义品牌主题 */
+:root {
+  /* 使用品牌色作为主色调 */
+  --primary: oklch(0.55 0.22 260); /* 紫色系 */
+  --primary-foreground: oklch(1 0 0);
+
+  /* 调整圆角更圆润 */
+  --radius: 1rem;
+
+  /* 自定义链接色 */
+  --link: oklch(0.5 0.25 265);
+}
+
+.dark {
+  --primary: oklch(0.75 0.2 260);
+  --background: oklch(0.12 0 0); /* 更深的背景 */
+}
+```
+
+## 🔗 相关资源
+
+- [Tailwind CSS v4 文档](https://tailwindcss.com/docs)
+- [OKLCH 颜色空间](https://oklch.com/)
+- [shadcn/ui 主题](https://ui.shadcn.com/themes)
