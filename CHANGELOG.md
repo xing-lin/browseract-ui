@@ -1,3 +1,9 @@
+# [1.15.0](https://github.com/xing-lin/browseract-ui/compare/v1.14.1...v1.15.0) (2025-12-24)
+
+### Features
+
+- 添加 Button 组件，以及调整构建 v2 组件的方式 ([b1a12d7](https://github.com/xing-lin/browseract-ui/commit/b1a12d739f8a1a464d3b0bb35809dc61017f9546))
+
 ## [1.14.1](https://github.com/xing-lin/browseract-ui/compare/v1.14.0...v1.14.1) (2025-11-21)
 
 ### Bug Fixes
