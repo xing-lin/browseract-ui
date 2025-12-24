@@ -22,36 +22,20 @@ jobs:
       - name: Checkout repository (full history & tags)
         uses: actions/checkout@v4
 
-      # ⚠️ 重要：使用 Trusted Publisher 时，不要配置 registry-url
-      # registry-url 会创建需要 NODE_AUTH_TOKEN 的 .npmrc，与 OIDC 冲突
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
 
-      - name: Configure npm for Trusted Publishing
+      - name: Configure npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          # 清理可能存在的旧 .npmrc 配置
-          rm -f ~/.npmrc .npmrc || true
-
-          # 确保 npm 版本支持 Trusted Publishing（需要 npm >= 9.5.0）
-          echo "npm version: $(npm --version)"
-
-          # 创建 .npmrc 配置
-          # 使用 Trusted Publishing (OIDC)，不需要预先设置 authToken
           cat > ~/.npmrc <<-EOF
+            //registry.npmjs.org/:_authToken=${NPM_TOKEN}
             registry=https://registry.npmjs.org/
             provenance=true
           EOF
-
-          # 显示配置（调试用）
-          echo "Created ~/.npmrc:"
-          cat ~/.npmrc
-
-          echo ""
-          echo "OIDC 环境变量检查:"
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:-❌ NOT SET}"
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:+✅ SET}"
 
       - name: Install dependencies
         run: npm ci
@@ -60,23 +44,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run tests with coverage
-        run: |
-          npm run test:coverage
-
-      - name: Show coverage files (debug)
-        run: |
-          echo "Coverage folder listing (for debug):"
-          ls -la coverage || true
-          find coverage -maxdepth 4 -type f -print || true
-          if [ -f coverage/lcov.info ]; then
-            echo "lcov found: coverage/lcov.info"
-            echo "---- head of lcov.info ----"
-            head -n 20 coverage/lcov.info || true
-            echo "---- end head ----"
-          else
-            echo "WARNING: coverage/lcov.info not found. Ensure vitest is configured with reporters including 'lcov'."
-            exit 1
-          fi
+        run: npm run test:coverage
 
       - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@v2
@@ -87,51 +55,19 @@ jobs:
       - name: Build package (rollup)
         run: npm run build
 
-      - name: Run semantic-release (determine version, tag, update package.json, publish to npm)
+      - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # 完全使用 Trusted Publishing (OIDC)
-          # @semantic-release/exec 会执行 npm publish，无需 NPM_TOKEN
-        run: |
-          # 验证 OIDC token 环境变量
-          echo "=== OIDC Token 环境检查 ==="
-          echo "ACTIONS_ID_TOKEN_REQUEST_URL: ${ACTIONS_ID_TOKEN_REQUEST_URL:-❌ NOT SET}"
-          echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:+✅ SET}"
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
 
-          if [ -z "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ]; then
-            echo "❌ 错误：OIDC token 环境变量未设置"
-            echo "请确保工作流有 id-token: write 权限"
-            exit 1
-          fi
-
-          # 验证 npm 配置
-          echo -e "\n=== npm 配置检查 ==="
-          echo "npm version: $(npm --version)"
-          npm config list
-
-          # 运行 semantic-release
-          # @semantic-release/npm 只更新版本，不发布
-          # @semantic-release/exec 执行 npm publish，使用 OIDC Trusted Publishing
-          echo -e "\n=== 运行 semantic-release (使用 Trusted Publishing) ==="
-          npx semantic-release
-
-      - name: Fetch latest main (get semantic-release's commits / updated package.json & tags)
+      - name: Fetch latest main
         run: |
           git fetch origin main --tags
           git checkout main
           git reset --hard origin/main
-          git --no-pager log -n 5 --pretty=oneline
 
-      - name: Show package version (debug)
-        run: |
-          echo "package.json version:"
-          node -p "require('./package.json').version"
-      - name: Show package version (debug)
-        run: |
-          echo "package.json version:"
-          node -p "require('./package.json').version"
-
-      - name: Build Storybook static
+      - name: Build Storybook
         run: npm run build-storybook
 
       - name: Checkout target repo
@@ -142,7 +78,7 @@ jobs:
           path: target_repo
           fetch-depth: 0
 
-      - name: Deploy storybook to target repo (checkout approach)
+      - name: Deploy Storybook
         env:
           TARGET_REPO: ${{ env.TARGET_REPO }}
           TARGET_DIR: target_repo
@@ -191,66 +127,30 @@ jobs:
             echo "Pushed storybook to ${TARGET_REPO}:main"
           fi
 
-      - name: Notify Feishu (publish)
-        # 不论成功失败都不影响后续步骤
+      - name: Notify Feishu
         continue-on-error: true
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-          PACKAGE_VERSION: ${{ steps.show_package_version.outputs.version || '' }}
         run: |
-          set -euo pipefail
-
-          # --- 获取版本（如果上一步没有输出，也从 package.json 读） ---
-          if [ -z "${PACKAGE_VERSION:-}" ]; then
-            PACKAGE_VERSION=$(node -p "require('./package.json').version")
-          fi
-
-          # 规范化 tag 名（如果 version 已以 v 开头就直接用，否则加 v 前缀）
-          if [[ "${PACKAGE_VERSION}" == v* ]]; then
-            TAG_NAME="${PACKAGE_VERSION}"
-          else
-            TAG_NAME="v${PACKAGE_VERSION}"
-          fi
-
-          # Release URL 可直接打开 changelog
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          TAG_NAME="v${PACKAGE_VERSION}"
           TAG_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
-
-          # 使用秒级 timestamp（若需毫秒可改为 python3 取毫秒）
-          timestamp=$(date +%s)
-
-          # 构造 string_to_sign（必须含真实换行）
-          string_to_sign=$(printf "%s\n%s" "$timestamp" "$FEISHU_SECRET")
-
-          # 用 string_to_sign 作为 HMAC key，对 空消息 做 HMAC-SHA256，输出二进制并 base64
-          sign=$(printf "" | openssl dgst -sha256 -hmac "$string_to_sign" -binary | base64)
-
-          # URL-encode 签名（优先使用 python3 的 urllib.parse.quote，稳妥）
-          if command -v python3 >/dev/null 2>&1; then
-            sign_enc=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip(), safe=''))" <<<"$sign")
-          else
-            # 兜底的简单 urlencode（只针对 base64 中常见字符）
-            sign_enc=$(echo -n "$sign" | sed -e 's/+/%2B/g' -e 's/\//%2F/g' -e 's/=/%3D/g')
-          fi
-
-          NPM_PKG_NAME=$(node -p "require('./package.json').name")
           REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
           DOCS_URL="https://xing-lin.github.io/components"
 
-          # 构造消息体（使用 cat <<JSON 保证变量会被展开且不产生多余缩进）
-          json=$(cat <<JSON
-          {"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: ${REPO_URL}\nVersion: ${PACKAGE_VERSION}\nRelease: ${TAG_URL}\nDocs: ${DOCS_URL}"}}
-          JSON
-          )
+          timestamp=$(date +%s)
+          string_to_sign=$(printf "%s\n%s" "$timestamp" "$FEISHU_SECRET")
+          sign=$(printf "" | openssl dgst -sha256 -hmac "$string_to_sign" -binary | base64)
 
-          # 发送请求；即使失败也不要让 step 返回非 0
-          FEISHU_URL="${FEISHU_WEBHOOK}?timestamp=${timestamp}&sign=${sign_enc}"
-          echo "Sending notification to Feishu (non-blocking)..."
-          resp=$(curl -s -X POST "${FEISHU_URL}" \
+          if command -v python3 >/dev/null 2>&1; then
+            sign_enc=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip(), safe=''))" <<<"$sign")
+          else
+            sign_enc=$(echo -n "$sign" | sed -e 's/+/%2B/g' -e 's/\//%2F/g' -e 's/=/%3D/g')
+          fi
+
+          json='{"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: '"$REPO_URL"'\nVersion: '"$PACKAGE_VERSION"'\nRelease: '"$TAG_URL"'\nDocs: '"$DOCS_URL"'"}}'
+
+          curl -s -X POST "${FEISHU_WEBHOOK}?timestamp=${timestamp}&sign=${sign_enc}" \
             -H "Content-Type: application/json" \
-            -d "${json}" ) || true
-
-          echo "Feishu response: $resp"
-
-      - name: Done
-        run: echo "Test -> Release -> Storybook deploy finished."
+            -d "$json" || true
