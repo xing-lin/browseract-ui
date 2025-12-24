@@ -31,6 +31,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // Mock next/link for test environment
+      'next/link': path.resolve(__dirname, './src/__mocks__/next/link.tsx'),
     },
   },
   test: {
@@ -69,6 +71,8 @@ export default defineConfig({
         'src/**/types.ts',
         'playground/**', // 排除 playground 开发测试文件
         'src/_shadcn/**', // 排除 shadcn/ui 组件
+        'src/components/button/ButtonLink.tsx', // 排除依赖 Next.js 的组件
+        'src/__mocks__/**', // 排除 mock 文件
       ],
       reporter: ['text', 'lcov', 'html', 'clover', 'json'],
     },

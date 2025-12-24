@@ -24,6 +24,9 @@ const config: StorybookConfig = {
           // 不进行压缩，storybook 引入 css 作为文档，保留注释以及换行，方便查阅
           cssMinify: false,
         },
+        define: {
+          'process.env.NODE_DEBUG': false,
+        },
       }),
     ),
 };

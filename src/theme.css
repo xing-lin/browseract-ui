@@ -1,6 +1,14 @@
-@import 'tailwindcss';
-
-@import 'tw-animate-css';
+/**
+ * BrowserAct UI 主题变量
+ *
+ * 使用方式：
+ * 在你的 Next.js 项目的全局 CSS 中导入：
+ *
+ * ```css
+ * @import 'tailwindcss';
+ * @import 'browseract-ui/theme';
+ * ```
+ */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -12,6 +20,13 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-fill-1: var(--fill-1);
+  --color-fill-2: var(--fill-2);
+  --color-fill-3: var(--fill-3);
+  --color-fill-4: var(--fill-4);
+
+  --color-link: var(--link);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -57,18 +72,21 @@
 }
 
 :root {
-  --fill-1: oklch(0.8853 0 0);
-  --fill-2: oklch(0.9551 0 0);
-  --fill-3: oklch(0.9702 0 0);
-  --fill-4: oklch(0.9851 0 0);
+  --fill-1: oklch(0 0 0 / 0.15);
+  --fill-2: oklch(0 0 0 / 0.06);
+  --fill-3: oklch(0 0 0 / 0.04);
+  --fill-4: oklch(0 0 0 / 0.02);
+
+  /* #1677ff */
+  --link: oklch(0.5987 0.219351 259.0395);
 
   --radius: 0.625rem;
 
   --background: oklch(1 0 0);
-  --foreground: oklch(0.2393 0 0);
-  --foreground-2: oklch(0.464 0 0);
-  --foreground-3: oklch(0.6401 0 0);
-  --foreground-4: oklch(0.8047 0 0);
+  --foreground: oklch(0 0 0 / 0.88);
+  --foreground-2: oklch(0 0 0 / 0.65);
+  --foreground-3: oklch(0 0 0 / 0.45);
+  --foreground-4: oklch(0 0 0 / 0.25);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -88,7 +106,6 @@
   --destructive: oklch(0.5771 0.2152 27.33);
 
   --border: oklch(0.9197 0.004 286.32);
-  /* 新增，分割线 */
   --divider: oklch(0.9551 0 0);
   --input: oklch(0.9219 0 0);
   --ring: oklch(0.709 0 0);
@@ -149,5 +166,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* tailwind v4 需要手动设置 cursor: pointer */
+  button:not([disabled]),
+  [role='button']:not([disabled]) {
+    cursor: pointer;
   }
 }
