@@ -9,9 +9,16 @@
     [
       "@semantic-release/npm",
       {
-        "npmPublish": true,
+        "npmPublish": false,
         "pkgRoot": ".",
         "tarballDir": "dist"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "echo 'Package version updated to ${nextRelease.version}'",
+        "publishCmd": "npm publish --provenance --access public"
       }
     ],
     [
@@ -24,9 +31,5 @@
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
-  ],
-  "verifyConditions": [
-    "@semantic-release/changelog",
-    "@semantic-release/git"
   ]
 }
