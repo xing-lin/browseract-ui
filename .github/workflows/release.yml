@@ -52,71 +52,71 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 
-      # - name: Fetch latest main
-      #   run: |
-      #     git fetch origin main --tags
-      #     git checkout main
-      #     git reset --hard origin/main
+      - name: Fetch latest main
+        run: |
+          git fetch origin main --tags
+          git checkout main
+          git reset --hard origin/main
 
-      # - name: Build Storybook
-      #   run: npm run build-storybook
+      - name: Build Storybook
+        run: npm run build-storybook
 
-      # - name: Checkout target repo
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: ${{ env.TARGET_REPO }}
-      #     token: ${{ secrets.PAT_TOKEN }}
-      #     path: target_repo
-      #     fetch-depth: 0
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.TARGET_REPO }}
+          token: ${{ secrets.PAT_TOKEN }}
+          path: target_repo
+          fetch-depth: 0
 
-      # - name: Deploy Storybook
-      #   env:
-      #     TARGET_REPO: ${{ env.TARGET_REPO }}
-      #     TARGET_DIR: target_repo
-      #   run: |
-      #     set -euo pipefail
+      - name: Deploy Storybook
+        env:
+          TARGET_REPO: ${{ env.TARGET_REPO }}
+          TARGET_DIR: target_repo
+        run: |
+          set -euo pipefail
 
-      #     SRC_DIR="${GITHUB_WORKSPACE}/storybook-static"
-      #     if [ ! -d "$SRC_DIR" ]; then
-      #       echo "ERROR: storybook build output not found at ${SRC_DIR}"
-      #       exit 1
-      #     fi
+          SRC_DIR="${GITHUB_WORKSPACE}/storybook-static"
+          if [ ! -d "$SRC_DIR" ]; then
+            echo "ERROR: storybook build output not found at ${SRC_DIR}"
+            exit 1
+          fi
 
-      #     PACKAGE_VERSION=$(node -p "require('${GITHUB_WORKSPACE}/package.json').version")
-      #     echo "Deploying storybook v${PACKAGE_VERSION} to ${TARGET_REPO}:main (path: static/storybook-static)"
+          PACKAGE_VERSION=$(node -p "require('${GITHUB_WORKSPACE}/package.json').version")
+          echo "Deploying storybook v${PACKAGE_VERSION} to ${TARGET_REPO}:main (path: static/storybook-static)"
 
-      #     cd "${TARGET_DIR}"
+          cd "${TARGET_DIR}"
 
-      #     if git ls-remote --exit-code origin refs/heads/main >/dev/null 2>&1; then
-      #       git fetch origin main
-      #       git checkout main
-      #       git reset --hard origin/main
-      #     else
-      #       git checkout --orphan main
-      #       git rm -rf .
-      #       git commit --allow-empty -m "chore: initialize main branch"
-      #       git push origin main || true
-      #     fi
+          if git ls-remote --exit-code origin refs/heads/main >/dev/null 2>&1; then
+            git fetch origin main
+            git checkout main
+            git reset --hard origin/main
+          else
+            git checkout --orphan main
+            git rm -rf .
+            git commit --allow-empty -m "chore: initialize main branch"
+            git push origin main || true
+          fi
 
-      #     TARGET_PATH="static/storybook-static"
-      #     echo "Removing old ${TARGET_PATH} (if exists)"
-      #     rm -rf "${TARGET_PATH}" || true
-      #     mkdir -p "$(dirname "${TARGET_PATH}")"
+          TARGET_PATH="static/storybook-static"
+          echo "Removing old ${TARGET_PATH} (if exists)"
+          rm -rf "${TARGET_PATH}" || true
+          mkdir -p "$(dirname "${TARGET_PATH}")"
 
-      #     echo "Copying new storybook static files..."
-      #     cp -R "${SRC_DIR}/." "${TARGET_PATH}/"
+          echo "Copying new storybook static files..."
+          cp -R "${SRC_DIR}/." "${TARGET_PATH}/"
 
-      #     git config user.name "github-actions[bot]" || true
-      #     git config user.email "github-actions[bot]@users.noreply.github.com" || true
+          git config user.name "github-actions[bot]" || true
+          git config user.email "github-actions[bot]@users.noreply.github.com" || true
 
-      #     git add -A
-      #     if git diff --cached --quiet; then
-      #       echo "No changes to deploy (storybook content identical)."
-      #     else
-      #       git commit -m "chore(storybook): deploy storybook v${PACKAGE_VERSION} from $GITHUB_REPOSITORY@${GITHUB_SHA}"
-      #       git push origin main
-      #       echo "Pushed storybook to ${TARGET_REPO}:main"
-      #     fi
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy (storybook content identical)."
+          else
+            git commit -m "chore(storybook): deploy storybook v${PACKAGE_VERSION} from $GITHUB_REPOSITORY@${GITHUB_SHA}"
+            git push origin main
+            echo "Pushed storybook to ${TARGET_REPO}:main"
+          fi
 
       # - name: Notify Feishu
       #   continue-on-error: true
