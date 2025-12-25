@@ -1,10 +1,10 @@
 'use client';
 
-import * as React from 'react';
 import { Checkbox as ShadcnCheckbox } from '@/_shadcn/components/ui/checkbox';
 import { Label } from '@/_shadcn/components/ui/label';
 import type * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { cn } from '@/utils';
+import { useId } from 'react';
 
 /**
  * Checkbox 组件的属性
@@ -53,7 +53,7 @@ export function Checkbox({
   ...props
 }: CheckboxProps) {
   // 生成唯一的 id（如果没有提供且需要 children）
-  const autoId = React.useId();
+  const autoId = useId();
   // 当有 children 时，确保 id 总是存在（用于 Label 的 htmlFor）
   const finalId = id ?? (children ? autoId : undefined);
 
