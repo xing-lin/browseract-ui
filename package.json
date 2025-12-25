@@ -1,6 +1,6 @@
 {
   "name": "browseract-ui",
-  "version": "1.15.1",
+  "version": "2.0.0",
   "type": "module",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
