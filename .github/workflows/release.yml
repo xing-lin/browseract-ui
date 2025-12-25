@@ -65,14 +65,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "=== 运行 semantic-release ==="
-          echo "当前 package.json 版本: $(node -p \"require('./package.json').version\")"
+          echo "当前 package.json 版本: $(node -p 'require("./package.json").version')"
           echo "使用 Trusted Publishing (OIDC) 进行 npm 发布"
           npx semantic-release --debug || {
             echo "semantic-release 执行完成（可能没有新版本需要发布）"
             exit 0
           }
           echo "=== semantic-release 完成 ==="
-          echo "新版本: $(node -p \"require('./package.json').version\")"
+          echo "新版本: $(node -p 'require("./package.json").version')"
 
       - name: Fetch latest main
         run: |
