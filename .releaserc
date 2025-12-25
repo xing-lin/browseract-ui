@@ -3,35 +3,10 @@
     "main"
   ],
   "plugins": [
-    [
-      "@semantic-release/commit-analyzer",
-      {
-        "preset": "conventionalcommits",
-        "releaseRules": [
-          {
-            "type": "chore",
-            "scope": "!",
-            "release": "major"
-          },
-          {
-            "type": "chore!",
-            "release": "major"
-          },
-          {
-            "breaking": true,
-            "release": "major"
-          }
-        ]
-      }
-    ],
+    "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true
-      }
-    ],
+    "@semantic-release/npm",
     [
       "@semantic-release/git",
       {
