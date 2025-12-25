@@ -118,30 +118,30 @@ jobs:
             echo "Pushed storybook to ${TARGET_REPO}:main"
           fi
 
-      # - name: Notify Feishu
-      #   continue-on-error: true
-      #   env:
-      #     FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-      #     FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-      #   run: |
-      #     PACKAGE_VERSION=$(node -p "require('./package.json').version")
-      #     TAG_NAME="v${PACKAGE_VERSION}"
-      #     TAG_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
-      #     REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
-      #     DOCS_URL="https://xing-lin.github.io/components"
+      - name: Notify Feishu
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          TAG_NAME="v${PACKAGE_VERSION}"
+          TAG_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
+          REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
+          DOCS_URL="https://xing-lin.github.io/components"
 
-      #     timestamp=$(date +%s)
-      #     string_to_sign=$(printf "%s\n%s" "$timestamp" "$FEISHU_SECRET")
-      #     sign=$(printf "" | openssl dgst -sha256 -hmac "$string_to_sign" -binary | base64)
+          timestamp=$(date +%s)
+          string_to_sign=$(printf "%s\n%s" "$timestamp" "$FEISHU_SECRET")
+          sign=$(printf "" | openssl dgst -sha256 -hmac "$string_to_sign" -binary | base64)
 
-      #     if command -v python3 >/dev/null 2>&1; then
-      #       sign_enc=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip(), safe=''))" <<<"$sign")
-      #     else
-      #       sign_enc=$(echo -n "$sign" | sed -e 's/+/%2B/g' -e 's/\//%2F/g' -e 's/=/%3D/g')
-      #     fi
+          if command -v python3 >/dev/null 2>&1; then
+            sign_enc=$(python3 -c "import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read().strip(), safe=''))" <<<"$sign")
+          else
+            sign_enc=$(echo -n "$sign" | sed -e 's/+/%2B/g' -e 's/\//%2F/g' -e 's/=/%3D/g')
+          fi
 
-      #     json='{"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: '"$REPO_URL"'\nVersion: '"$PACKAGE_VERSION"'\nRelease: '"$TAG_URL"'\nDocs: '"$DOCS_URL"'"}}'
+          json='{"msg_type":"text","content":{"text":"🚀 发布成功\nRepository: '"$REPO_URL"'\nVersion: '"$PACKAGE_VERSION"'\nRelease: '"$TAG_URL"'\nDocs: '"$DOCS_URL"'"}}'
 
-      #     curl -s -X POST "${FEISHU_WEBHOOK}?timestamp=${timestamp}&sign=${sign_enc}" \
-      #       -H "Content-Type: application/json" \
-      #       -d "$json" || true
+          curl -s -X POST "${FEISHU_WEBHOOK}?timestamp=${timestamp}&sign=${sign_enc}" \
+            -H "Content-Type: application/json" \
+            -d "$json" || true
